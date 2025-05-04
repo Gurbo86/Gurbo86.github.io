@@ -1,0 +1,6 @@
+If you want to work with this CV Generator Install Visual Studio Code (or the ide you prefer) then open the folder where the CV generator is and after that open the generate_portfolio.py and run it.
+Once the environment is setted, to :
+Modify the generation sources modify the generate_portfolio.py.
+To modify the data, use the template portfolio.json, modify it and save it. If you  save it with another name add the name in generate_portfolio.p in line 8.
+To modify the format of the full cv template, use the template CV_template.html, modify it and save it. If you save it with another name add the name in generate_portfolio.p in line 23.
+To modify the format of the resume template, use the template resume_template.html, modify it and save it. If you save it with another name add the name in generate_portfolio.p in line 25.

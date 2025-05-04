@@ -1,13 +1,13 @@
 {
-  "name": "Leonel Máximo Maguet",
-  "label": "Game Designer/Programmer",
-  "image_path": "img/Photo.png",
+  "name": "Your Name",
+  "label": "Optional Label",
+  "image_path": "img/default-image.png",
   "contact": {
-    "email": "leonel.maguet@gmail.com",
-    "phone": "(+44) 07831 365640",
-    "location": "Darlington, Durham, United Kingdom"
+    "email": "FirstLast@Sample.com",
+    "phone": "123-456-7890",
+    "location": "City, State, Country"
   },
-  "summary": "I'm a game designer/programmer with more than 10 years of experience in the game industry.I'm a passionate for creating immersive experiences of all kind. I have a strong background in computer science and a keen interest in game mechanics and storytelling.",
+  "summary": "A short summary of who you are, your background, experience, and interests to give visitors a quick introduction to you.",
   "base_url": "127.0.0.1:5500",
   "social_links": [
     {
@@ -17,62 +17,35 @@
     },
     {
       "label": "First Social",
-      "url": "https://www.linkedin.com/in/leonel-maguet-a2b756b/",
+      "url": "https://sample.com",
       "svg_path": "img/linkedin.svg"
     },
     {
       "label": "Second Social",
-      "url": "https://github.com/Gurbo86",
+      "url": "https://sample.com",
       "svg_path": "img/github.svg"
     }
   ],
   "work_experience": [
     {
-      "company": "Double Eleven Studios",
-      "position": "Senior Game Designer",
-      "url": "https://www.linkedin.com/company/double-eleven-limited/",
-      "start_date": "01/2024",
-      "end_date": "05/2025",
-      "summary": "Through this time, I have been I was involved in the release of the campaigns content and comunity servers tools for the game.",
+      "company": "Latest Job",
+      "position": "Position One",
+      "url": "https://sample.com",
+      "start_date": "01/01/2020",
+      "end_date": "Present",
+      "summary": "Short summary about present job and what the position entails",
       "highlights": [
-        "Adapted and released Underground Assault Update",
-        "Adapted and released Aquageddon Update",
-        "Adapted and released Industrial Content Update", 
-        "Designed and released Kits Creation Tool"
-      ]
-    },
-    {
-      "company": "Double Eleven Studios",
-      "position": "Game Designer",
-      "url": "https://www.linkedin.com/company/double-eleven-limited/",
-      "start_date": "11/2022",
-      "end_date": "01/2024",
-      "summary": "First year working on Rust Console Version. Throught this first year I make an important impact redefining how mechanic worked in game by standarizing them. Also build up an internal wiki documentation in Notion for the game design depatment.",
-      "highlights": [
-        "Released Horsepocalypse Update",
-        "Released Cultivator Update",
-        "Released Power Surge Update"
-      ]
-    },
-    {
-      "company": "Double Eleven Studios",
-      "position": "Programmer",
-      "url": "https://www.linkedin.com/company/double-eleven-limited/",
-      "start_date": "03/2021",
-      "end_date": "11/2022",
-      "summary": "I have been working on developing tools for animators and sound designers in Prison Architect 2's development process. Worked with Unity, C#, and C++. The tools ui was built mainly in nGUI.",
-      "highlights": [
-        "Developed tools for animators and sound designers",
-        "Developed some ECS Systems for characters facial animations",
-        "Gameplay Programming"
+        "First Duty of Current Job",
+        "Second Duty of Current Job",
+        "Third Duty of Current Job"
       ]
     },
     {
       "company": "Previous Job",
       "position": "Position Two",
       "url": "https://sample.com",
-      "start_date": "01/2010",
-      "end_date": "01/2020",
+      "start_date": "01/01/2010",
+      "end_date": "01/01/2020",
       "summary": "Short summary about previous job and what that position entailed",
       "highlights": [
         "First Duty of Previous Job",
