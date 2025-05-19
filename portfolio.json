@@ -7,7 +7,7 @@
     "phone": "(+44) 07831 365640",
     "location": "Darlington, Durham, United Kingdom"
   },
-  "summary": "I'm a game designer/programmer with more than 10 years of experience in the game industry.I'm a passionate for creating immersive experiences of all kind. I have a strong background in computer science and a keen interest in game mechanics and storytelling.",
+  "summary": "Multidisciplinary Game Designer and Game Programmer with over 14 years of hands-on experience crafting engaging gameplay systems, intuitive user interfaces, and robust backend features. Demonstrated success in shipping acclaimed titles such as Rust Console Edition, The Sandbox Evolution, and Prison Architect 2. Expert in Unity, C#, C++, and PL-SQL, with deep fluency in gameplay architecture, system design, and player experience. Passionate about designing mechanics that enhance player agency, prototyping features from concept to final implementation, and collaborating across disciplines to bring game worlds to life. Adept at balancing creative vision with technical execution to deliver polished and impactful experiences.",
   "base_url": "127.0.0.1:5500",
   "social_links": [
     {
@@ -16,68 +16,223 @@
       "svg_path": "img/globe.svg"
     },
     {
-      "label": "First Social",
+      "label": "LinkedIn",
       "url": "https://www.linkedin.com/in/leonel-maguet-a2b756b/",
       "svg_path": "img/linkedin.svg"
     },
     {
-      "label": "Second Social",
+      "label": "Github",
       "url": "https://github.com/Gurbo86",
       "svg_path": "img/github.svg"
     }
   ],
   "work_experience": [
     {
-      "company": "Double Eleven Studios",
+      "company": "Double Eleven",
       "position": "Senior Game Designer",
-      "url": "https://www.linkedin.com/company/double-eleven-limited/",
+      "url": "https://www.linkedin.com/company/double-eleven-limited/about/",
       "start_date": "01/2024",
       "end_date": "05/2025",
-      "summary": "Through this time, I have been I was involved in the release of the campaigns content and comunity servers tools for the game.",
+      "summary": "Worked on the release of new campaign content and community server tools for Rust Console Edition.",
       "highlights": [
-        "Adapted and released Underground Assault Update",
-        "Adapted and released Aquageddon Update",
-        "Adapted and released Industrial Content Update", 
-        "Designed and released Kits Creation Tool"
+        "Authored comprehensive documentation for new console version features.",
+        "Adapted and improved core mechanics and UI from PC to console.",
+        "Designed key community server features.",
+        "Contributed to the release of 'Underground Assault', 'Aquageddon', and 'Industrial' updates.",
+        "Released tools including the 'Kits Creation Tool', 'Item Spawner Menus', and the 'Administrator Control Panel' for community servers."
       ]
     },
     {
-      "company": "Double Eleven Studios",
+      "company": "Double Eleven",
       "position": "Game Designer",
-      "url": "https://www.linkedin.com/company/double-eleven-limited/",
+      "url": "https://www.linkedin.com/company/double-eleven-limited/about/",
       "start_date": "11/2022",
       "end_date": "01/2024",
-      "summary": "First year working on Rust Console Version. Throught this first year I make an important impact redefining how mechanic worked in game by standarizing them. Also build up an internal wiki documentation in Notion for the game design depatment.",
+      "summary": "First year working on Rust Console Edition. Led efforts in standardizing mechanics and established the internal game design documentation wiki in Notion.",
       "highlights": [
-        "Released Horsepocalypse Update",
-        "Released Cultivator Update",
-        "Released Power Surge Update"
+        "Documented new feature implementations for the console release.",
+        "Adapted and enhanced gameplay systems and UI from PC to console.",
+        "Designed features supporting community servers.",
+        "Shipped 'Power Surge', 'Cultivator', and 'Horsepocalypse' updates."
       ]
     },
     {
-      "company": "Double Eleven Studios",
+      "company": "Double Eleven",
       "position": "Programmer",
-      "url": "https://www.linkedin.com/company/double-eleven-limited/",
+      "url": "https://www.linkedin.com/company/double-eleven-limited/about/",
       "start_date": "03/2021",
       "end_date": "11/2022",
-      "summary": "I have been working on developing tools for animators and sound designers in Prison Architect 2's development process. Worked with Unity, C#, and C++. The tools ui was built mainly in nGUI.",
+      "summary": "Contributed to Prison Architect 2, focusing on tools for animators and audio teams. Used Unity, C#, and C++ with UI in NGUI.",
       "highlights": [
-        "Developed tools for animators and sound designers",
-        "Developed some ECS Systems for characters facial animations",
-        "Gameplay Programming"
+        "Developed custom tools for animation and sound design pipelines.",
+        "Built ECS systems (e.g., facial animation framework).",
+        "Participated in gameplay programming.",
+        "Helped deliver Prison Architect 2."
       ]
     },
     {
-      "company": "Previous Job",
-      "position": "Position Two",
-      "url": "https://sample.com",
-      "start_date": "01/2010",
-      "end_date": "01/2020",
-      "summary": "Short summary about previous job and what that position entailed",
+      "company": "Widow Games",
+      "position": "Sr. Unity Programmer / Project Manager / UX Design Support",
+      "url": "https://www.linkedin.com/company/widow-games/about/",
+      "start_date": "02/2020",
+      "end_date": "03/2021",
+      "summary": "Led development of Geopoly, a location-based real estate game, and contributed to the planning, UX, and technical evaluations of new features.",
       "highlights": [
-        "First Duty of Previous Job",
-        "Second Duty of Previous Job",
-        "Third Duty of Previous Job"
+        "Built and maintained gameplay systems in Unity.",
+        "Managed sprint planning and task assignment.",
+        "Evaluated UI/UX design and proposed improvements.",
+        "Assessed design feasibility in collaboration with multiple teams.",
+        "Supported releases of Banco Regional, A Vida é um Jogo, War Strategy, and Carrera de Mente."
+      ]
+    },
+    {
+      "company": "Hexacta",
+      "position": "Semi-Senior Programmer",
+      "url": "https://www.linkedin.com/company/hexacta/about/",
+      "start_date": "04/2019",
+      "end_date": "02/2020",
+      "summary": "Worked on Coalfire's cybersecurity platform (U.S.-based). Used C#, Angular, MySQL, and MongoDB.",
+      "highlights": [
+        "Maintained and improved backend systems.",
+        "Developed new platform features."
+      ]
+    },
+    {
+      "company": "Extension Universitaria UTN Buenos Aires",
+      "position": "Game Design Professor",
+      "url": "https://www.linkedin.com/company/sceuutnba/about/",
+      "start_date": "03/2016",
+      "end_date": "12/2019",
+      "summary": "Taught an introductory game design course at UTN Buenos Aires aimed at students from diverse backgrounds, including those without prior game development experience. The curriculum combined theory with hands-on exercises, covering core principles of mechanics, player experience, and iterative design.",
+      "highlights": [
+        "Taught a theoretical-practical course on game design for over 150 students.",
+        "Developed inclusive curriculum focusing on foundational design principles and gameplay structure.",
+        "Encouraged iterative design thinking through workshops and peer feedback.",
+        "Several students went on to publish indie projects or pursue careers in game development.",
+        "Received positive feedback from student evaluations."
+      ]
+    },
+    {
+      "company": "Extension Universitaria UTN Buenos Aires",
+      "position": "Kotlin and OOP Professor",
+      "url": "https://www.linkedin.com/company/sceuutnba/about/",
+      "start_date": "03/2019",
+      "end_date": "06/2019",
+      "summary": "Taught an introductory course on Kotlin and object-oriented programming at UTN Buenos Aires, designed to be accessible to students with no prior programming background. The course emphasized conceptual understanding through practical coding exercises.",
+      "highlights": [
+        "Taught core programming structures including variables, control flow, and functions.",
+        "Introduced students to the Kotlin programming language and its applications.",
+        "Provided a solid theoretical foundation in the object-oriented programming (OOP) paradigm.",
+        "The course enrolled nearly 30 students.",
+        "Received strong engagement and positive feedback from students."
+      ]
+    },
+    {
+      "company": "Firerooster/Quickbytes",
+      "position": "Senior Game Designer",
+      "url": "https://www.linkedin.com/company/quickbyte-games/about/",
+      "start_date": "06/2017",
+      "end_date": "04/2019",
+      "summary": "Crash course of game design mainly focused on analising, prototiping and developing games (Boardgames or Videogames).The tools given helps to establish a framework that enables the student resolve design problems using critical thought, testing and iteration.",
+      "highlights": [
+        "Analyzed and revamped legacy game mechanics and UI.",
+        "Designed game features and monetization models.",
+        "Led a team of two junior designers.",
+        "Released Chezz, Laps, and Blasty Bubs.",
+        "Created design services within the FireroosterSDK platform."
+      ]
+    },
+    {
+      "company": "Firerooster",
+      "position": "Programmer",
+      "url": "",
+      "start_date": "06/2017",
+      "end_date": "04/2019",
+      "summary": "Built FireroosterSDK, a BI platform for analyzing player data and game metrics.",
+      "highlights": [
+        "Designed and implemented the SDK in Unity and C#."
+      ]
+    },
+    {
+      "company": "Magnetico",
+      "position": "Programmer (Freelance)",
+      "url": "https://www.linkedin.com/company/usmagnetico/about/",
+      "start_date": "01/2017",
+      "end_date": "06/2017",
+      "summary": "Developed Soy Luna: Sticker Game for Disney LATAM in collaboration with Terra.",
+      "highlights": [
+        "Led a team of 2 developers.",
+        "Delivered full-featured mobile game using Unity."
+      ]
+    },
+    {
+      "company": "Pixowl",
+      "position": "Game Designer",
+      "url": "https://www.linkedin.com/company/pixowl/about/",
+      "start_date": "02/2016",
+      "end_date": "01/2017",
+      "summary": "Worked on The Sandbox Evolution, creating content, levels, and managing campaigns.",
+      "highlights": [
+        "Designed features, mechanics, and levels.",
+        "Scripted missions and events.",
+        "Released The Sandbox Evolution and campaigns including Caveman, Fujin, and Ghostbusters."
+      ]
+    },
+    {
+      "company": "MercadoLibre",
+      "position": "UX Designer",
+      "url": "https://www.linkedin.com/company/mercadolibre/about/",
+      "start_date": "03/2015",
+      "end_date": "02/2016",
+      "summary": "Improved user experience for one of Latin America's largest e-commerce platforms.",
+      "highlights": [
+        "Conducted user research.",
+        "Designed wireframes and prototypes.",
+        "Optimized user flows based on analytics."
+      ]
+    },
+    {
+      "company": "Rebel Dwarf",
+      "position": "Unity Programmer",
+      "url": "https://www.linkedin.com/company/rebel-dwarf/about/",
+      "start_date": "10/2014",
+      "end_date": "03/2015",
+      "summary": "Developed Wurds, a fantasy-themed word puzzle game.",
+      "highlights": [
+        "Designed and developed gameplay systems."
+      ]
+    },
+    {
+      "company": "BVision",
+      "position": "Analyst Programmer",
+      "url": "https://www.linkedin.com/company/bvision/about/",
+      "start_date": "11/2013",
+      "end_date": "10/2014",
+      "summary": "Worked on CITI Bank’s RDW reporting system for Latin America.",
+      "highlights": [
+        "Developed database and reporting solutions using PL-SQL and Shell scripting."
+      ]
+    },
+    {
+      "company": "Sofrecom",
+      "position": "Analyst Programmer",
+      "url": "https://www.linkedin.com/company/sofrecom/about/",
+      "start_date": "06/2011",
+      "end_date": "01/2012",
+      "summary": "Supported Telecom’s ADAS project for service activation systems.",
+      "highlights": [
+        "Maintained systems built with C, C++, Java, PL-SQL, and Shell scripting."
+      ]
+    },
+    {
+      "company": "Everis",
+      "position": "Programmer",
+      "url": "https://www.linkedin.com/company/everis-is-nttdata/about/",
+      "start_date": "04/2010",
+      "end_date": "08/2011",
+      "summary": "Worked on Telefónica’s C.I.C.I. platform for legacy data migration.",
+      "highlights": [
+        "Developed tools using PL-SQL, Shell Scripting, HTML, and Perl."
       ]
     }
   ],

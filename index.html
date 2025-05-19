@@ -1,57 +1,59 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gurbos Game Design</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      scroll-behavior: smooth;
-    }
-  </style>
-</head>
-<body class="bg-black text-white">
-  
-<!-- Header -->
-<header class="fixed w-full bg-black bg-opacity-90 z-50">
-  <nav class="flex items-center justify-between px-4 py-4 max-w-full mx-auto whitespace-nowrap">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gurbos Game Design</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="./css/output.css" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
 
-    <!-- Logo -->
-    <h1 class="text-lg font-bold">Gurbo's Game Development</h1>
+  <body class="bg-black text-white">
 
-    <!-- Botón hamburguesa (visible solo en mobile) -->
-    <button id="menu-toggle" class="md:hidden text-white focus:outline-none ml-auto py-2">
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-      </svg>
-    </button>
+    <!-- Header -->
+    <header class="fixed w-full bg-black bg-opacity-90 z-50">
+      <nav class="flex items-center justify-between px-4 py-4 max-w-full mx-auto whitespace-nowrap">
 
-    <!-- Menú principal -->
-    <ul id="menu" class="hidden md:flex md:space-x-6 md:items-center absolute md:static top-full left-0 w-full md:w-auto bg-black md:bg-transparent p-0 z-40 md:max-h-full md:overflow-visible flex-col md:flex-row">
-      <li><a href="#home" class="block px-1 py-2 hover:underline">Home</a></li>
-      <li><a href="#portfolio" class="block px-1 py-2 hover:underline">Portfolio</a></li>
-      <li><a href="#about" class="block px-1 py-2 hover:underline">About Me</a></li>
-      <li><a href="#blog" class="block px-1 py-2 hover:underline">Blog</a></li>
-      <li><a href="#contact" class="block px-1 py-2 hover:underline">Contact</a></li>
-    </ul>
-  </nav>
+        <!-- Logo -->
+        <h1 class="text-lg font-bold">Gurbo's Game Development</h1>
 
-  <!-- Comportamiento del Menú -->
-  <script>
-    const toggle = document.getElementById('menu-toggle');
-    const menu = document.getElementById('menu');
+        <!-- Botón hamburguesa (visible solo en mobile) -->
+        <button id="menu-toggle" class="md:hidden text-white focus:outline-none ml-auto py-2">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
 
-    toggle.addEventListener('click', () => {
-      menu.classList.toggle('hidden');
-    });
-  </script>
-</header>
+        <!-- Menú principal -->
+        <ul id="menu" class="hidden md:flex md:space-x-6 md:items-center absolute md:static top-full left-0 w-full md:w-auto bg-black md:bg-transparent p-0 z-40 md:max-h-full md:overflow-visible flex-col md:flex-row">
+          <li><a href="#home" class="block px-1 py-2 hover:underline">Home</a></li>
+          <li><a href="#about" class="block px-1 py-2 hover:underline">About Me</a></li>
+          <li><a href="#portfolio" class="block px-1 py-2 hover:underline">Portfolio</a></li>
+          <li><a href="#blog" class="block px-1 py-2 hover:underline">Blog</a></li>
+          <li><a href="#contact" class="block px-1 py-2 hover:underline">Contact</a></li>
+        </ul>
+      </nav>
 
-  <!-------------------------------- Home ------------------------------------->
-  <section id="home" class="relative h-screen flex items-center justify-center text-center overflow-hidden text-white">
+      <!-- Comportamiento del Menú -->
+      <script>
+        const toggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('menu');
+
+        toggle.addEventListener('click', () => {
+          menu.classList.toggle('hidden');
+        });
+      </script>
+    </header>
+
+    <!-------------------------------- Home ------------------------------------->
+    <section id="home" class="relative h-screen flex items-center justify-center text-center overflow-hidden text-white">
     <!-- Imagen de fondo -->
     <img src="img/header.jpg" alt="Gurbos header" class="absolute inset-0 w-full h-full object-cover object-center opacity-80 z-0">
     
@@ -71,9 +73,9 @@
         </span>
       </div>
     </div>
-  </section>
+    </section>
 
-  <script>
+    <script>
     const phrases = [
       "Game Designer",
       "Systems Designer",
@@ -81,6 +83,7 @@
       "UX Designer",
       "Gameplay Programmer",
       "Tools Programmer",
+      "UI Programmer",
       "Producer",
       "Educator",
     ];
@@ -99,47 +102,638 @@
         el.classList.add("opacity-100");
       }, 300);
     }, 2500);
-  </script>
+    </script>
 
-  <!-------------------------------- Portfolio ------------------------------------->
-  <section id="portfolio" class="min-h-screen py-20 px-6 bg-gray-900">
-    <h2 class="text-3xl font-bold mb-8 text-center">Portfolio</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <!-- Proyecto ejemplo -->
-      <div class="bg-gray-800 p-4 rounded-xl shadow-md">
-        <img src="proyecto1.jpg" alt="Proyecto 1" class="mb-4 rounded">
-        <h3 class="text-xl font-semibold">Juego A</h3>
-        <p class="text-sm">Descripción breve del proyecto.</p>
+    <!--------------------------------- About Me ------------------------------------->
+    <section id="about" class="min-h-screen py-20 px-6 bg-black text-white">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      
+      <!-- Texto a la izquierda -->
+      <div>
+        <h2 class="text-3xl font-bold mb-6">About Me</h2>
+        <p class="text-lg leading-relaxed">
+          Hi, my name is Leonel Maximo Maguet but I’ve been using the nickname Gurbo for a while.<br><br>
+          I’ve been interested in games since I was a boy, playing them made me realize that I wanted to make them, so I’ve tried very hard to find a way to make a living of this industry in Argentina.<br><br>
+          I did lots of volunteering for the past years and I made it to the final stage of a few enterpreneur competitions. I have been a Programmer, an Entrepreneur and an Investigator, also, in the past few years I´ve been working as Game Designer and I´ve been teaching Game Design classes at different institutes and universities.<br><br>
+          At this page I intend to put together all the games I’ve been working on and also, offer my two cents about games in the form of thoughts and rant posts.<br><br>
+          I hope you enjoy them.
+        </p>
       </div>
-    </div>
-  </section>
 
-  <!-- Sobre mí -->
-<section id="about" class="min-h-screen py-20 px-6 bg-black text-white">
-  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-    
-    <!-- Texto a la izquierda -->
-    <div>
-      <h2 class="text-3xl font-bold mb-6">About Me</h2>
-      <p class="text-lg leading-relaxed">
-        Hi, my name is Leonel Maximo Maguet but I’ve been using the nickname Gurbo for a while.<br><br>
-        I’ve been interested in games since I was a boy, playing them made me realize that I wanted to make them, so I’ve tried very hard to find a way to make a living of this industry in Argentina.<br><br>
-        I did lots of volunteering for the past years and I made it to the final stage of a few enterpreneur competitions. I have been a Programmer, an Entrepreneur and an Investigator, also, in the past few years I´ve been working as Game Designer and I´ve been teaching Game Design classes at different institutes and universities.<br><br>
-        At this page I intend to put together all the games I’ve been working on and also, offer my two cents about games in the form of thoughts and rant posts.<br><br>
-        I hope you enjoy them.
-      </p>
+      <!-- Imagen a la derecha -->
+      <div class="flex justify-center">
+        <img src="portfolio_media/profesionalPhoto.png" alt="Me" class="rounded-lg shadow-lg max-w-full h-auto">
+      </div>
+      
     </div>
+    </section>
 
-    <!-- Imagen a la derecha -->
-    <div class="flex justify-center">
-      <img src="portfolio_media/profesionalPhoto.png" alt="Me" class="rounded-lg shadow-lg max-w-full h-auto">
-    </div>
-    
-  </div>
-</section>
+    <!-------------------------------- Portfolio ------------------------------------->
+    <section id="portfolio" class="min-h-screen py-20 px-6 bg-gray-900">
+      <h2 class="text-3xl font-bold mb-8 text-center">Portfolio</h2>
+      
+      <!-- Filtros de rol -->
+      <!-- Visible solo en pantallas medianas y grandes -->
+      <div class="hidden md:flex flex-wrap justify-center gap-2 mb-8">
+        <button onclick="filterProjects('all')" class="px-4 py-2 bg-white text-black rounded hover:bg-gray-200">All</button>
+        <button onclick="filterProjects('gameplayprogrammer')" class="px-4 py-2 bg-white text-black rounded hover:bg-gray-200">Gameplay Programmer</button>
+        <button onclick="filterProjects('toolsprogrammer')" class="px-4 py-2 bg-white text-black rounded hover:bg-gray-200">Tools Programmer</button>
+        <button onclick="filterProjects('uiprogrammer')" class="px-4 py-2 bg-white text-black rounded hover:bg-gray-200">UI Programmer</button>
+        <button onclick="filterProjects('gamedesigner')" class="px-4 py-2 bg-white text-black rounded hover:bg-gray-200">Game Designer</button>
+        <button onclick="filterProjects('techincaldesigner')" class="px-4 py-2 bg-white text-black rounded hover:bg-gray-200">Technical Designer</button>
+        <button onclick="filterProjects('systemsdesigner')" class="px-4 py-2 bg-white text-black rounded hover:bg-gray-200">Systems Designer</button>
+        <button onclick="filterProjects('economydesigner')" class="px-4 py-2 bg-white text-black rounded hover:bg-gray-200">Economy Designer</button>
+        <button onclick="filterProjects('leveldesigner')" class="px-4 py-2 bg-white text-black rounded hover:bg-gray-200">Level Designer</button>
+        <button onclick="filterProjects('uxdesigner')" class="px-4 py-2 bg-white text-black rounded hover:bg-gray-200">UX Designer</button>
+        <button onclick="filterProjects('producer')" class="px-4 py-2 bg-white text-black rounded hover:bg-gray-200">Producer</button>
+      </div>
 
-  <!------------------------------------- Blog ------------------------------------->
-  <section id="blog" class="min-h-screen py-20 px-6 bg-gray-900">
+      <!-- Combo box para mobile -->
+      <div class="block md:hidden mb-8 px-4">
+        <select onchange="filterProjects(this.value)" class="w-full px-4 py-2 rounded bg-white text-black">
+          <option value="all">All</option>
+          <option value="gameplayprogrammer">Gameplay Programmer</option>
+          <option value="toolsprogrammer">Tools Programmer</option>
+          <option value="uiprogrammer">UI Programmer</option>
+          <option value="gamedesigner">Game Designer</option>
+          <option value="techincaldesigner">Technical Designer</option>
+          <option value="systemsdesigner">Systems Designer</option>
+          <option value="economydesigner">Economy Designer</option>
+          <option value="leveldesigner">Level Designer</option>
+          <option value="uxdesigner">UX Designer</option>
+          <option value="producer">Producer</option>
+        </select>
+      </div>
+
+      <!-- Grilla de Proyectos -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Proyecto - Rust Console - Industrial Update 1 & 2 -->
+        <!-- Tag del Filtro -->
+        <div class="portfolio-item fade-in" data-role="gamedesigner uxdesigner techincaldesigner">
+          <div class="project-card generic-hover group md:items-end">
+            <!-- Imagen de fondo -->
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('portfolio_media/RustConsole/industrial.jpg');"></div>
+            <!-- Overlay oscuro solo en desktop -->
+            <div class="absolute inset-0 bg-black generic-fade-in-overlay"></div>
+
+            <!-- Information del juego -->
+            <!-- Título del juego arriba a la izquierda -->
+            <div class="project-badge generic-fade-to-disapearance">
+              Rust Console
+            </div>
+            <!-- Logo de empresa arriba a la derecha con enlace - Double Eleven -->
+            <div class="company-logo generic-fade-to-disapearance" title="Double Eleven">
+              <a href="https://www.double11.com/" target="_blank" rel="noopener noreferrer">
+                <img src="companies_logos\double_eleven_limited_logo.jpg" alt="Double Eleven Logo">
+              </a>
+            </div>
+            <!-- Contenido encima -->
+            <div class="project-content generic-fade-to-disapearance">
+              <h3 class="project-title">Industrial Update 1 & 2</h3>
+              <p class="project-description">Release of the industrial system that enable players to automatize several aspects of gameplay revolving around survival.</p>
+            </div>
+            <!-- Information del juego -->
+
+          </div>
+          <div class="tap-hint hidden absolute inset-0 flex items-center justify-center z-20">
+            <div class="animate-bounce text-white text-2xl pointer-events-none">
+              👆
+            </div>
+          </div>
+        </div>
+        
+        <!-- Proyecto - Rust Console - Aquageddon Update 1 & 2 -->
+        <!-- Tag del Filtro -->
+        <div class="portfolio-item fade-in" data-role="gamedesigner uxdesigner techincaldesigner">
+          <div class="project-card generic-hover group md:items-end">
+            <!-- Imagen de fondo -->
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('portfolio_media/RustConsole/aquageddon.jpg');"></div>
+            <!-- Overlay oscuro -->
+            <div class="absolute inset-0 bg-black generic-fade-in-overlay"></div>
+          
+            <!-- Information del juego -->
+            <!-- Título del juego arriba a la izquierda -->
+            <div class="project-badge generic-fade-to-disapearance">
+              Rust Console
+            </div>
+            <!-- Logo de empresa arriba a la derecha con enlace - Double Eleven -->
+            <div class="company-logo generic-fade-to-disapearance" title="Double Eleven">
+              <a href="https://www.double11.com/" target="_blank" rel="noopener noreferrer">
+                <img src="companies_logos\double_eleven_limited_logo.jpg" alt="Double Eleven Logo">
+              </a>
+            </div>
+            <!-- Contenido encima -->
+            <div class="project-content generic-fade-to-disapearance">
+              <h3 class="project-title">Aquageddon Update 1 & 2</h3>
+              <p class="text-sm">Release of a package that incorporated a whole revamp of the map with map markers and the tactical pings, added new vehicles (Solo Submarine, Duo Submarine, and Tugboat) and also a new Monument, the Underwater Labs.</p>
+            </div>
+            <!-- Information del juego -->
+
+          </div>
+          <div class="tap-hint hidden absolute inset-0 flex items-center justify-center z-20">
+            <div class="animate-bounce text-white text-2xl pointer-events-none">
+              👆
+            </div>
+          </div>
+        </div>
+        
+        <!-- Proyecto - Rust Console - Underground Assault -->
+        <!-- Tag del Filtro -->
+        <div class="portfolio-item fade-in" data-role="gamedesigner uxdesigner techincaldesigner">
+          <div class="project-card generic-hover group md:items-end">
+            <!-- Imagen de fondo -->
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('portfolio_media/RustConsole/undergroundassault.jpg');"></div>
+            <!-- Overlay oscuro -->
+            <div class="absolute inset-0 bg-black generic-fade-in-overlay"></div>
+          
+            <!-- Information del juego -->
+            <!-- Título del juego arriba a la izquierda -->
+            <div class="project-badge generic-fade-to-disapearance">
+              Rust Console
+            </div>
+            <!-- Logo de empresa arriba a la derecha con enlace - Double Eleven -->
+            <div class="company-logo generic-fade-to-disapearance" title="Double Eleven">
+              <a href="https://www.double11.com/" target="_blank" rel="noopener noreferrer">
+                <img src="companies_logos\double_eleven_limited_logo.jpg" alt="Double Eleven Logo">
+              </a>
+            </div>
+            <!-- Contenido encima -->
+            <div class="project-content generic-fade-to-disapearance">
+              <h3 class="project-title">Underground Assault</h3>
+              <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus odio arcu, accumsan sit amet fermentum eleifend, egestas eu nisi. Quisque eleifend id enim quis sagittis. Cras nec fermentum massa. Praesent felis nibh, dictum quis elementum scelerisque sed. .</p>
+            </div>
+            <!-- Information del juego -->
+
+          </div>
+          <div class="tap-hint hidden absolute inset-0 flex items-center justify-center z-20">
+            <div class="animate-bounce text-white text-2xl pointer-events-none">
+              👆
+            </div>
+          </div>
+        </div>
+        
+        <!-- Proyecto - Rust Console - Horsepocalypse -->
+        <!-- Tag del Filtro -->
+        <div class="portfolio-item fade-in" data-role="gamedesigner uxdesigner techincaldesigner">
+          <div class="project-card generic-hover group md:items-end">
+            <!-- Imagen de fondo -->
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('portfolio_media/RustConsole/horspocalypse.jpg');"></div>
+            <!-- Overlay oscuro -->
+            <div class="absolute inset-0 bg-black generic-fade-in-overlay"></div>
+          
+            <!-- Information del juego -->
+            <!-- Título del juego arriba a la izquierda -->
+            <div class="project-badge generic-fade-to-disapearance">
+              Rust Console
+            </div>
+            <!-- Logo de empresa arriba a la derecha con enlace - Double Eleven -->
+            <div class="company-logo generic-fade-to-disapearance" title="Double Eleven">
+              <a href="https://www.double11.com/" target="_blank" rel="noopener noreferrer">
+                <img src="companies_logos\double_eleven_limited_logo.jpg" alt="Double Eleven Logo">
+              </a>
+            </div>
+            <!-- Contenido encima -->
+            <div class="project-content generic-fade-to-disapearance">
+              <h3 class="project-title">Horsepocalypse</h3>
+              <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus odio arcu, accumsan sit amet fermentum eleifend, egestas eu nisi. Quisque eleifend id enim quis sagittis. Cras nec fermentum massa. Praesent felis nibh, dictum quis elementum scelerisque sed. .</p>
+            </div>
+            <!-- Information del juego -->
+
+          </div>
+          <div class="tap-hint hidden absolute inset-0 flex items-center justify-center z-20">
+            <div class="animate-bounce text-white text-2xl pointer-events-none">
+              👆
+            </div>
+          </div>
+        </div>
+        
+        <!-- Proyecto - Rust Console - Cultivator -->
+        <!-- Tag del Filtro -->
+        <div class="portfolio-item fade-in" data-role="gamedesigner uxdesigner techincaldesigner">
+          <div class="project-card generic-hover group md:items-end">
+            <!-- Imagen de fondo -->
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('portfolio_media/RustConsole/cultivator.jpg');"></div>
+            <!-- Overlay oscuro -->
+            <div class="absolute inset-0 bg-black generic-fade-in-overlay"></div>
+          
+            <!-- Information del juego -->
+            <!-- Título del juego arriba a la izquierda -->
+            <div class="project-badge generic-fade-to-disapearance">
+              Rust Console
+            </div>
+            <!-- Logo de empresa arriba a la derecha con enlace - Double Eleven -->
+            <div class="company-logo generic-fade-to-disapearance" title="Double Eleven">
+              <a href="https://www.double11.com/" target="_blank" rel="noopener noreferrer">
+                <img src="companies_logos\double_eleven_limited_logo.jpg" alt="Double Eleven Logo">
+              </a>
+            </div>
+            <!-- Contenido encima -->
+            <div class="project-content generic-fade-to-disapearance">
+              <h3 class="project-title">Cultivator</h3>
+              <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus odio arcu, accumsan sit amet fermentum eleifend, egestas eu nisi. Quisque eleifend id enim quis sagittis. Cras nec fermentum massa. Praesent felis nibh, dictum quis elementum scelerisque sed. .</p>
+            </div>
+            <!-- Information del juego -->
+
+          </div>
+          <div class="tap-hint hidden absolute inset-0 flex items-center justify-center z-20">
+            <div class="animate-bounce text-white text-2xl pointer-events-none">
+              👆
+            </div>
+          </div>
+        </div>
+        
+        <!-- Proyecto - Rust Console - Powersurge -->
+        <!-- Tag del Filtro -->
+        <div class="portfolio-item fade-in" data-role="gamedesigner uxdesigner techincaldesigner">
+          <div class="project-card generic-hover group md:items-end">
+            <!-- Imagen de fondo -->
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('portfolio_media/RustConsole/powersurge.jpg');"></div>
+            <!-- Overlay oscuro -->
+            <div class="absolute inset-0 bg-black generic-fade-in-overlay"></div>
+            
+            <!-- Information del juego -->
+            <!-- Título del juego arriba a la izquierda -->
+            <div class="project-badge generic-fade-to-disapearance">
+              Rust Console
+            </div>
+            <!-- Logo de empresa arriba a la derecha con enlace - Double Eleven -->
+            <div class="company-logo generic-fade-to-disapearance" title="Double Eleven">
+              <a href="https://www.double11.com/" target="_blank" rel="noopener noreferrer">
+                <img src="companies_logos\double_eleven_limited_logo.jpg" alt="Double Eleven Logo">
+              </a>
+            </div>
+            <!-- Contenido encima -->
+            <div class="project-content generic-fade-to-disapearance">
+              <h3 class="project-title">Powersurge</h3>
+              <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus odio arcu, accumsan sit amet fermentum eleifend, egestas eu nisi. Quisque eleifend id enim quis sagittis. Cras nec fermentum massa. Praesent felis nibh, dictum quis elementum scelerisque sed. .</p>
+            </div>
+            <!-- Information del juego -->
+
+          </div>
+        </div>
+
+        <!-- Proyecto - Prison Architect 2 -->
+        <!-- Tag del Filtro -->
+        <div class="portfolio-item fade-in" data-role="toolsprogrammer gameplayprogrammer">
+          <div class="project-card generic-hover group md:items-end">
+            <!-- Imagen de fondo -->
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('portfolio_media/PrisonArchitect2/prisonarchitect2.jpg');"></div>
+            <!-- Overlay oscuro -->
+            <div class="absolute inset-0 bg-black generic-fade-in-overlay"></div>
+          
+            <!-- Information del juego -->
+            <!-- Título del juego arriba a la izquierda -->
+            <div class="project-badge generic-fade-to-disapearance">
+              Prison Architect 2
+            </div>
+            <!-- Logo de empresa arriba a la derecha con enlace - Double Eleven -->
+            <div class="company-logo generic-fade-to-disapearance" title="Double Eleven">
+              <a href="https://www.double11.com/" target="_blank" rel="noopener noreferrer">
+                <img src="companies_logos\double_eleven_limited_logo.jpg" alt="Double Eleven Logo">
+              </a>
+            </div>
+            <!-- Contenido encima -->
+            <div class="project-content generic-fade-to-disapearance">
+              <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus odio arcu, accumsan sit amet fermentum eleifend, egestas eu nisi. Quisque eleifend id enim quis sagittis. Cras nec fermentum massa. Praesent felis nibh, dictum quis elementum scelerisque sed. .</p>
+            </div>
+            <!-- Information del juego -->
+
+          </div>
+        </div>
+
+        <!-- Proyecto - Geopoly -->
+        <!-- Tag del Filtro -->
+        <div class="portfolio-item fade-in" data-role="uxdesigner gamedesigner gameplayprogrammer uiprogrammer producer">
+          <div class="project-card generic-hover group md:items-end">
+            <!-- Imagen de fondo -->
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('portfolio_media/\WidowGames/geopoly.jpg');"></div>
+            <!-- Overlay oscuro -->
+            <div class="absolute inset-0 bg-black generic-fade-in-overlay"></div>
+            
+            <!-- Information del juego -->
+            <!-- Título del juego arriba a la izquierda -->
+            <div class="project-badge generic-fade-to-disapearance">
+              Geopoly
+            </div>
+            <!-- Logo de empresa arriba a la derecha con enlace - Widow Games -->
+            <div class="company-logo generic-fade-to-disapearance" title="Widow Games">
+              <a href="https://www.widowgames.com/" target="_blank" rel="noopener noreferrer">
+                <img src="companies_logos\widow_games_logo.jpg" alt="Widow Games Logo">
+              </a>
+            </div>
+            <!-- Contenido encima -->
+            <div class="project-content generic-fade-to-disapearance">
+              <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus odio arcu, accumsan sit amet fermentum eleifend, egestas eu nisi. Quisque eleifend id enim quis sagittis. Cras nec fermentum massa. Praesent felis nibh, dictum quis elementum scelerisque sed. .</p>
+            </div>
+            <!-- Information del juego -->
+
+          </div>
+        </div>
+
+        <!-- Proyecto - A Vida é um Jogo -->
+        <!-- Tag del Filtro -->
+        <div class="portfolio-item fade-in" data-role="gameplayprogrammer">
+          <div class="project-card generic-hover group md:items-end">
+            <!-- Imagen de fondo -->
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('portfolio_media/\WidowGames/avidaéumjogo.jpg');"></div>
+            <!-- Overlay oscuro -->
+            <div class="absolute inset-0 bg-black generic-fade-in-overlay"></div>
+          
+            <!-- Information del juego -->
+            <!-- Título del juego arriba a la izquierda -->
+            <div class="project-badge generic-fade-to-disapearance">
+              A Vida é um Jogo
+            </div>
+            <!-- Logo de empresa arriba a la derecha con enlace - Widow Games -->
+            <div class="company-logo generic-fade-to-disapearance" title="Widow Games">
+              <a href="https://www.widowgames.com/" target="_blank" rel="noopener noreferrer">
+                <img src="companies_logos\widow_games_logo.jpg" alt="Widow Games Logo">
+              </a>
+            </div>
+            <!-- Contenido encima -->
+            <div class="project-content generic-fade-to-disapearance">
+              <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus odio arcu, accumsan sit amet fermentum eleifend, egestas eu nisi. Quisque eleifend id enim quis sagittis. Cras nec fermentum massa. Praesent felis nibh, dictum quis elementum scelerisque sed. .</p>
+            </div>
+            <!-- Information del juego -->
+
+          </div>
+        </div>
+
+        <!-- Proyecto - Banco Regional -->
+        <!-- Tag del Filtro -->
+        <div class="portfolio-item fade-in" data-role="gameplayprogrammer">
+          <div class="project-card generic-hover group md:items-end">
+            <!-- Imagen de fondo -->
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('portfolio_media/\WidowGames/bancoregional.png');"></div>
+            <!-- Overlay oscuro -->
+            <div class="absolute inset-0 bg-black generic-fade-in-overlay"></div>
+          
+            <!-- Information del juego -->
+            <!-- Título del juego arriba a la izquierda -->
+            <div class="project-badge generic-fade-to-disapearance">
+              Banco Regional
+            </div>
+            <!-- Logo de empresa arriba a la derecha con enlace - Widow Games -->
+            <div class="company-logo generic-fade-to-disapearance" title="Widow Games">
+              <a href="https://www.widowgames.com/" target="_blank" rel="noopener noreferrer">
+                <img src="companies_logos\widow_games_logo.jpg" alt="Widow Games Logo">
+              </a>
+            </div>
+            <!-- Contenido encima -->
+            <div class="project-content generic-fade-to-disapearance">
+              <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus odio arcu, accumsan sit amet fermentum eleifend, egestas eu nisi. Quisque eleifend id enim quis sagittis. Cras nec fermentum massa. Praesent felis nibh, dictum quis elementum scelerisque sed. .</p>
+            </div>
+            <!-- Information del juego -->
+
+          </div>
+        </div>
+
+        <!-- Proyecto - Carrera de Mente -->
+        <!-- Tag del Filtro -->
+        <div class="portfolio-item fade-in" data-role="gameplayprogrammer">
+          <div class="project-card generic-hover group md:items-end">
+            <!-- Imagen de fondo -->
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('portfolio_media/WidowGames/carrerademente.jpg');"></div>
+            <!-- Overlay oscuro -->
+            <div class="absolute inset-0 bg-black generic-fade-in-overlay"></div>
+          
+            <!-- Information del juego -->
+            <!-- Título del juego arriba a la izquierda -->
+            <div class="project-badge generic-fade-to-disapearance">
+              Carrera de Mente
+            </div>
+            <!-- Logo de empresa arriba a la derecha con enlace - Widow Games -->
+            <div class="company-logo generic-fade-to-disapearance" title="Widow Games">
+              <a href="https://www.widowgames.com/" target="_blank" rel="noopener noreferrer">
+                <img src="companies_logos\widow_games_logo.jpg" alt="Widow Games Logo">
+              </a>
+            </div>
+            <!-- Contenido encima -->
+            <div class="project-content generic-fade-to-disapearance">
+              <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus odio arcu, accumsan sit amet fermentum eleifend, egestas eu nisi. Quisque eleifend id enim quis sagittis. Cras nec fermentum massa. Praesent felis nibh, dictum quis elementum scelerisque sed. .</p>
+            </div>
+            <!-- Information del juego -->
+
+          </div>
+        </div>
+
+        <!-- Proyecto - Laps Fuse -->
+        <!-- Tag del Filtro -->
+        <div class="portfolio-item fade-in" data-role="gamedesigner uxdesigner economydesigner">
+          <div class="project-card generic-hover group md:items-end">
+            <!-- Imagen de fondo -->
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('portfolio_media/Firerooster-Quickbytes/laps.jpg');"></div>
+            <!-- Overlay oscuro -->
+            <div class="absolute inset-0 bg-black generic-fade-in-overlay"></div>
+          
+            <!-- Information del juego -->
+            <!-- Título del juego arriba a la izquierda -->
+            <div class="project-badge generic-fade-to-disapearance">
+              Laps Fuse
+            </div>
+            <!-- Logo de empresa arriba a la derecha sin enlace - QuickByte -->
+            <div class="company-logo generic-fade-to-disapearance" title="QuickByte Games">
+              <img src="companies_logos\quickbyte_logo.jpg" alt="QuickByte Logo">
+            </div>
+            <!-- Contenido encima -->
+            <div class="project-content generic-fade-to-disapearance">
+              <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus odio arcu, accumsan sit amet fermentum eleifend, egestas eu nisi. Quisque eleifend id enim quis sagittis. Cras nec fermentum massa. Praesent felis nibh, dictum quis elementum scelerisque sed. .</p>
+            </div>
+            <!-- Information del juego -->
+
+          </div>
+        </div>
+
+        
+        <!-- Proyecto - Chezz -->
+        <!-- Tag del Filtro -->
+        <div class="portfolio-item fade-in" data-role="gamedesigner uxdesigner economydesigner">
+          <div class="project-card generic-hover group md:items-end">
+            <!-- Imagen de fondo -->
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('portfolio_media/Firerooster-Quickbytes/chezz.jpg');"></div>
+            <!-- Overlay oscuro -->
+            <div class="absolute inset-0 bg-black generic-fade-in-overlay"></div>
+          
+            <!-- Information del juego -->
+            <!-- Título del juego arriba a la izquierda -->
+            <div class="project-badge generic-fade-to-disapearance">
+              Chezz
+            </div>
+            <!-- Logo de empresa arriba a la derecha sin enlace - QuickByte -->
+            <div class="company-logo generic-fade-to-disapearance" title="QuickByte Games">
+              <img src="companies_logos\quickbyte_logo.jpg" alt="QuickByte Logo">
+            </div>
+            <!-- Contenido encima -->
+            <div class="project-content generic-fade-to-disapearance">
+              <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus odio arcu, accumsan sit amet fermentum eleifend, egestas eu nisi. Quisque eleifend id enim quis sagittis. Cras nec fermentum massa. Praesent felis nibh, dictum quis elementum scelerisque sed. .</p>
+            </div>
+            <!-- Information del juego -->
+
+          </div>
+        </div>
+
+        
+        <!-- Proyecto - Blasty Bubs -->
+        <!-- Tag del Filtro -->
+        <div class="portfolio-item fade-in" data-role="gamedesigner uxdesigner economydesigner">
+          <div class="project-card generic-hover group md:items-end">
+            <!-- Imagen de fondo -->
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('portfolio_media/Firerooster-Quickbytes/blastybubs.jpg');"></div>
+            <!-- Overlay oscuro -->
+            <div class="absolute inset-0 bg-black generic-fade-in-overlay"></div>
+            
+            <!-- Information del juego -->
+            <!-- Título del juego arriba a la izquierda -->
+            <div class="project-badge generic-fade-to-disapearance">
+              Blasty Bubs
+            </div>
+            <!-- Logo de empresa arriba a la derecha sin enlace - QuickByte -->
+            <div class="company-logo generic-fade-to-disapearance" title="QuickByte Games">
+              <img src="companies_logos\quickbyte_logo.jpg" alt="QuickByte Logo">
+            </div>
+            <!-- Contenido encima -->
+            <div class="project-content generic-fade-to-disapearance">
+              <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus odio arcu, accumsan sit amet fermentum eleifend, egestas eu nisi. Quisque eleifend id enim quis sagittis. Cras nec fermentum massa. Praesent felis nibh, dictum quis elementum scelerisque sed. .</p>
+            </div>
+            <!-- Information del juego -->
+
+          </div>
+        </div>
+
+        <!-- Proyecto - The Sandbox Evolution -->
+        <!-- Tag del Filtro -->
+        <div class="portfolio-item fade-in" data-role="systemsdesigner leveldesigner gamedesigner">
+          <div class="project-card generic-hover group md:items-end">
+            <!-- Imagen de fondo -->
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('portfolio_media/Pixowl/thesandboxevolution.jpg');"></div>
+            <!-- Overlay oscuro -->
+            <div class="absolute inset-0 bg-black generic-fade-in-overlay"></div>
+            
+            <!-- Information del juego -->
+            <!-- Título del juego arriba a la izquierda -->
+            <div class="project-badge generic-fade-to-disapearance">
+              The Sandbox Evolution
+            </div>
+            <!-- Logo de empresa arriba a la derecha con enlace - Pixowl -->
+            <div class="company-logo generic-fade-to-disapearance" title="Pixowl">
+              <a href="https://www.pixowl.com/" target="_blank" rel="noopener noreferrer">
+                <img src="companies_logos\pixowl_logo.jpg" alt="Pixowl Logo">
+              </a>
+            </div>
+            <!-- Contenido encima -->
+            <div class="project-content generic-fade-to-disapearance">
+              <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus odio arcu, accumsan sit amet fermentum eleifend, egestas eu nisi. Quisque eleifend id enim quis sagittis. Cras nec fermentum massa. Praesent felis nibh, dictum quis elementum scelerisque sed. .</p>
+            </div>
+            <!-- Information del juego -->
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Script de los filtros -->
+      <script>
+        function filterProjects(role) {
+          const items = document.querySelectorAll('.portfolio-item');
+
+          items.forEach(item => {
+            const roles = item.getAttribute('data-role');
+            const matches = role === 'all' || roles.includes(role);
+
+            if (matches) {
+              item.classList.remove('hidden');
+              setTimeout(() => {
+                item.classList.remove('generic-fade-out');
+                item.classList.add('generic-fade-in');
+              }, 10);
+            } else {
+              item.classList.remove('generic-fade-in');
+              item.classList.add('generic-fade-out');
+              setTimeout(() => {
+                item.classList.add('hidden');
+              }, 300);
+            }
+          });
+        }
+      </script>
+
+      <!-- Script de ocultar contenido y overlay en mobile -->
+      <script>
+        document.querySelectorAll('.portfolio-item').forEach(item => {
+          item.addEventListener('click', () => {
+            if (window.innerWidth < 640) {
+              document.querySelectorAll('.portfolio-item .group.active').forEach(el => {
+                el.classList.remove('active');
+              });
+
+              const group = item.querySelector('.group');
+              if (!group.classList.contains('active')) {
+                group.classList.add('active');
+              }
+            }
+          });
+        });
+      </script>
+      
+      <!-- Script de ocultar contenido y overlay cuando la tarjeta sale de la pantalla en mobile -->
+      <script>
+        const mobileObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (!entry.isIntersecting && window.innerWidth < 640) {
+              const group = entry.target.querySelector('.group');
+              if (group && group.classList.contains('active')) {
+                group.classList.remove('active');
+              }
+            }
+          });
+        }, {
+          threshold: 0.0 // cuando desaparece completamente
+        });
+
+        document.querySelectorAll('.portfolio-item').forEach(item => {
+          mobileObserver.observe(item);
+        });
+      </script>
+
+      <!-- Script que da un hint animado en las tarjetas en mobile -->      
+      <script>
+        const hintObserver = new IntersectionObserver((entries) => {
+          const visibles = [];
+
+          entries.forEach(entry => {
+            const group = entry.target.querySelector('.group');
+            const hint = entry.target.querySelector('.tap-hint');
+
+            if (!group || !hint) return;
+
+            if (entry.isIntersecting && window.innerWidth < 640 && !group.classList.contains('active')) {
+              visibles.push({ item: entry.target, hint });
+            } else {
+              hint.classList.add('hidden'); // oculta si sale o está activa
+            }
+          });
+
+          visibles
+            .sort((a, b) => a.item.getBoundingClientRect().top - b.item.getBoundingClientRect().top)
+            .forEach(({ hint }, index) => {
+              setTimeout(() => {
+                hint.classList.remove('hidden');
+              }, index * 400); // efecto en cascada
+            });
+
+        }, {
+          threshold: 0.5
+        });
+
+        document.querySelectorAll('.portfolio-item').forEach(item => {
+          hintObserver.observe(item);
+        });
+      </script>
+    </section>
+
+    <!------------------------------------- Blog ------------------------------------->
+    <section id="blog" class="min-h-screen py-20 px-6 bg-gray-900">
     <h2 class="text-3xl font-bold mb-8 text-center">Blog</h2>
     <div class="max-w-3xl mx-auto">
       <article class="mb-8">
@@ -147,10 +741,10 @@
         <p class="text-sm">Pequeña introducción o resumen del post...</p>
       </article>
     </div>
-  </section>
+    </section>
 
-  <!----------------------------------- Contact ------------------------------------>
-  <section id="contact" class="min-h-screen py-20 px-6 bg-black">
+    <!----------------------------------- Contact ------------------------------------>
+    <section id="contact" class="min-h-screen py-20 px-6 bg-black">
     <h2 class="text-3xl font-bold mb-8 text-center">Contact</h2>
     <form action="https://formspree.io/f/tu-id" method="POST" class="max-w-xl mx-auto space-y-4">
       <input type="text" name="nombre" placeholder="Tu nombre" class="w-full p-3 rounded bg-gray-800 text-white" required>
@@ -158,7 +752,21 @@
       <textarea name="mensaje" rows="5" placeholder="Tu mensaje" class="w-full p-3 rounded bg-gray-800 text-white" required></textarea>
       <button type="submit" class="bg-white text-black px-6 py-2 rounded font-bold">Enviar</button>
     </form>
-  </section>
+    </section>
 
-</body>
+    <!------------------------------------- Footer ------------------------------------->
+    <!-- Social icons floating -->
+    <div class="fixed bottom-6 right-6 flex flex-col items-center space-y-3 z-50">
+    <a href="https://github.com/Gurbo86" target="_blank" class="bg-white text-black p-2 rounded-full shadow hover:bg-gray-200 transition">
+      <i class="fab fa-github"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/leonel-maguet-a2b756b/" target="_blank" class="bg-white text-blue-600 p-2 rounded-full shadow hover:bg-blue-100 transition">
+      <i class="fab fa-linkedin-in"></i>
+    </a>
+    <a href="mailto:leonel.maguet@gmail.com" class="bg-white text-red-600 p-2 rounded-full shadow hover:bg-red-100 transition">
+      <i class="fas fa-envelope"></i>
+    </a>
+    </div>
+
+  </body>
 </html>
