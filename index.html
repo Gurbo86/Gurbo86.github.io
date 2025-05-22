@@ -32,7 +32,7 @@
         </button>
 
         <!-- Menú principal -->
-        <ul id="menu" class="hidden md:flex md:space-x-6 md:items-center absolute md:static top-full left-0 w-full md:w-auto bg-black md:bg-transparent p-0 z-40 md:max-h-full md:overflow-visible flex-col md:flex-row">
+        <ul id="menu" class="max-h-0 overflow-hidden md:flex transition-all duration-500 ease-in-out absolute md:static top-full left-0 w-full md:w-auto bg-black md:bg-transparent z-40 md:max-h-full flex-col md:flex-row">
           <li><a href="#home" class="block px-1 py-2 hover:underline">Home</a></li>
           <li><a href="#about" class="block px-1 py-2 hover:underline">About Me</a></li>
           <li><a href="#portfolio" class="block px-1 py-2 hover:underline">Portfolio</a></li>
@@ -46,8 +46,30 @@
         const toggle = document.getElementById('menu-toggle');
         const menu = document.getElementById('menu');
 
+        const showMenu = () => {
+          menu.classList.remove('max-h-0');
+          menu.classList.add('max-h-[500px]');
+        };
+
+        const hideMenu = () => {
+          menu.classList.remove('max-h-[500px]');
+          menu.classList.add('max-h-0');
+        };
+
         toggle.addEventListener('click', () => {
-          menu.classList.toggle('hidden');
+          if (menu.classList.contains('max-h-0')) {
+            showMenu();
+          } else {
+            hideMenu();
+          }
+        });
+
+        document.querySelectorAll('#menu a').forEach(link => {
+          link.addEventListener('click', () => {
+            if (window.innerWidth < 768) {
+              hideMenu();
+            }
+          });
         });
       </script>
     </header>
@@ -194,11 +216,16 @@
               <p class="project-description">Release of the industrial system that enable players to automatize several aspects of gameplay revolving around survival.</p>
             </div>
             <!-- Information del juego -->
-
-          </div>
-          <div class="tap-hint hidden absolute inset-0 flex items-center justify-center z-20">
-            <div class="animate-bounce text-white text-2xl pointer-events-none">
-              👆
+             
+            <!-- hint para tap -->
+            <div class="tap-hint absolute inset-0 z-10 pointer-events-none opacity-0 transition-opacity duration-700">
+              <div class="absolute inset-0 bg-black bg-opacity-70 z-20">
+                <div class="flex items-center justify-center h-full z-30">
+                  <div class="text-white text-base tracking-wide text-center font-bold uppercase px-3 py-1 rounded-md">
+                    Tap for more info
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -229,11 +256,16 @@
               <p class="text-sm">Release of a package that incorporated a whole revamp of the map with map markers and the tactical pings, added new vehicles (Solo Submarine, Duo Submarine, and Tugboat) and also a new Monument, the Underwater Labs.</p>
             </div>
             <!-- Information del juego -->
-
-          </div>
-          <div class="tap-hint hidden absolute inset-0 flex items-center justify-center z-20">
-            <div class="animate-bounce text-white text-2xl pointer-events-none">
-              👆
+             
+            <!-- hint para tap -->
+            <div class="tap-hint absolute inset-0 z-10 pointer-events-none opacity-0 transition-opacity duration-700">
+              <div class="absolute inset-0 bg-black bg-opacity-70 z-20">
+                <div class="flex items-center justify-center h-full z-30">
+                  <div class="text-white text-base tracking-wide text-center font-bold uppercase px-3 py-1 rounded-md">
+                    Tap for more info
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -264,11 +296,16 @@
               <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus odio arcu, accumsan sit amet fermentum eleifend, egestas eu nisi. Quisque eleifend id enim quis sagittis. Cras nec fermentum massa. Praesent felis nibh, dictum quis elementum scelerisque sed. .</p>
             </div>
             <!-- Information del juego -->
-
-          </div>
-          <div class="tap-hint hidden absolute inset-0 flex items-center justify-center z-20">
-            <div class="animate-bounce text-white text-2xl pointer-events-none">
-              👆
+             
+            <!-- hint para tap -->
+            <div class="tap-hint absolute inset-0 z-10 pointer-events-none opacity-0 transition-opacity duration-700">
+              <div class="absolute inset-0 bg-black bg-opacity-70 z-20">
+                <div class="flex items-center justify-center h-full z-30">
+                  <div class="text-white text-base tracking-wide text-center font-bold uppercase px-3 py-1 rounded-md">
+                    Tap for more info
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -299,11 +336,16 @@
               <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus odio arcu, accumsan sit amet fermentum eleifend, egestas eu nisi. Quisque eleifend id enim quis sagittis. Cras nec fermentum massa. Praesent felis nibh, dictum quis elementum scelerisque sed. .</p>
             </div>
             <!-- Information del juego -->
-
-          </div>
-          <div class="tap-hint hidden absolute inset-0 flex items-center justify-center z-20">
-            <div class="animate-bounce text-white text-2xl pointer-events-none">
-              👆
+             
+            <!-- hint para tap -->
+            <div class="tap-hint absolute inset-0 z-10 pointer-events-none opacity-0 transition-opacity duration-700">
+              <div class="absolute inset-0 bg-black bg-opacity-70 z-20">
+                <div class="flex items-center justify-center h-full z-30">
+                  <div class="text-white text-base tracking-wide text-center font-bold uppercase px-3 py-1 rounded-md">
+                    Tap for more info
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -334,11 +376,16 @@
               <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus odio arcu, accumsan sit amet fermentum eleifend, egestas eu nisi. Quisque eleifend id enim quis sagittis. Cras nec fermentum massa. Praesent felis nibh, dictum quis elementum scelerisque sed. .</p>
             </div>
             <!-- Information del juego -->
-
-          </div>
-          <div class="tap-hint hidden absolute inset-0 flex items-center justify-center z-20">
-            <div class="animate-bounce text-white text-2xl pointer-events-none">
-              👆
+             
+            <!-- hint para tap -->
+            <div class="tap-hint absolute inset-0 z-10 pointer-events-none opacity-0 transition-opacity duration-700">
+              <div class="absolute inset-0 bg-black bg-opacity-70 z-20">
+                <div class="flex items-center justify-center h-full z-30">
+                  <div class="text-white text-base tracking-wide text-center font-bold uppercase px-3 py-1 rounded-md">
+                    Tap for more info
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -369,7 +416,17 @@
               <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus odio arcu, accumsan sit amet fermentum eleifend, egestas eu nisi. Quisque eleifend id enim quis sagittis. Cras nec fermentum massa. Praesent felis nibh, dictum quis elementum scelerisque sed. .</p>
             </div>
             <!-- Information del juego -->
-
+             
+            <!-- hint para tap -->
+            <div class="tap-hint absolute inset-0 z-10 pointer-events-none opacity-0 transition-opacity duration-700">
+              <div class="absolute inset-0 bg-black bg-opacity-70 z-20">
+                <div class="flex items-center justify-center h-full z-30">
+                  <div class="text-white text-base tracking-wide text-center font-bold uppercase px-3 py-1 rounded-md">
+                    Tap for more info
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -398,7 +455,17 @@
               <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus odio arcu, accumsan sit amet fermentum eleifend, egestas eu nisi. Quisque eleifend id enim quis sagittis. Cras nec fermentum massa. Praesent felis nibh, dictum quis elementum scelerisque sed. .</p>
             </div>
             <!-- Information del juego -->
-
+             
+            <!-- hint para tap -->
+            <div class="tap-hint absolute inset-0 z-10 pointer-events-none opacity-0 transition-opacity duration-700">
+              <div class="absolute inset-0 bg-black bg-opacity-70 z-20">
+                <div class="flex items-center justify-center h-full z-30">
+                  <div class="text-white text-base tracking-wide text-center font-bold uppercase px-3 py-1 rounded-md">
+                    Tap for more info
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -427,7 +494,17 @@
               <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus odio arcu, accumsan sit amet fermentum eleifend, egestas eu nisi. Quisque eleifend id enim quis sagittis. Cras nec fermentum massa. Praesent felis nibh, dictum quis elementum scelerisque sed. .</p>
             </div>
             <!-- Information del juego -->
-
+             
+            <!-- hint para tap -->
+            <div class="tap-hint absolute inset-0 z-10 pointer-events-none opacity-0 transition-opacity duration-700">
+              <div class="absolute inset-0 bg-black bg-opacity-70 z-20">
+                <div class="flex items-center justify-center h-full z-30">
+                  <div class="text-white text-base tracking-wide text-center font-bold uppercase px-3 py-1 rounded-md">
+                    Tap for more info
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -456,7 +533,17 @@
               <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus odio arcu, accumsan sit amet fermentum eleifend, egestas eu nisi. Quisque eleifend id enim quis sagittis. Cras nec fermentum massa. Praesent felis nibh, dictum quis elementum scelerisque sed. .</p>
             </div>
             <!-- Information del juego -->
-
+             
+            <!-- hint para tap -->
+            <div class="tap-hint absolute inset-0 z-10 pointer-events-none opacity-0 transition-opacity duration-700">
+              <div class="absolute inset-0 bg-black bg-opacity-70 z-20">
+                <div class="flex items-center justify-center h-full z-30">
+                  <div class="text-white text-base tracking-wide text-center font-bold uppercase px-3 py-1 rounded-md">
+                    Tap for more info
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -485,7 +572,17 @@
               <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus odio arcu, accumsan sit amet fermentum eleifend, egestas eu nisi. Quisque eleifend id enim quis sagittis. Cras nec fermentum massa. Praesent felis nibh, dictum quis elementum scelerisque sed. .</p>
             </div>
             <!-- Information del juego -->
-
+             
+            <!-- hint para tap -->
+            <div class="tap-hint absolute inset-0 z-10 pointer-events-none opacity-0 transition-opacity duration-700">
+              <div class="absolute inset-0 bg-black bg-opacity-70 z-20">
+                <div class="flex items-center justify-center h-full z-30">
+                  <div class="text-white text-base tracking-wide text-center font-bold uppercase px-3 py-1 rounded-md">
+                    Tap for more info
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -514,7 +611,17 @@
               <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus odio arcu, accumsan sit amet fermentum eleifend, egestas eu nisi. Quisque eleifend id enim quis sagittis. Cras nec fermentum massa. Praesent felis nibh, dictum quis elementum scelerisque sed. .</p>
             </div>
             <!-- Information del juego -->
-
+             
+            <!-- hint para tap -->
+            <div class="tap-hint absolute inset-0 z-10 pointer-events-none opacity-0 transition-opacity duration-700">
+              <div class="absolute inset-0 bg-black bg-opacity-70 z-20">
+                <div class="flex items-center justify-center h-full z-30">
+                  <div class="text-white text-base tracking-wide text-center font-bold uppercase px-3 py-1 rounded-md">
+                    Tap for more info
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -541,11 +648,20 @@
               <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus odio arcu, accumsan sit amet fermentum eleifend, egestas eu nisi. Quisque eleifend id enim quis sagittis. Cras nec fermentum massa. Praesent felis nibh, dictum quis elementum scelerisque sed. .</p>
             </div>
             <!-- Information del juego -->
-
+             
+            <!-- hint para tap -->
+            <div class="tap-hint absolute inset-0 z-10 pointer-events-none opacity-0 transition-opacity duration-700">
+              <div class="absolute inset-0 bg-black bg-opacity-70 z-20">
+                <div class="flex items-center justify-center h-full z-30">
+                  <div class="text-white text-base tracking-wide text-center font-bold uppercase px-3 py-1 rounded-md">
+                    Tap for more info
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
-        
         <!-- Proyecto - Chezz -->
         <!-- Tag del Filtro -->
         <div class="portfolio-item fade-in" data-role="gamedesigner uxdesigner economydesigner">
@@ -569,10 +685,19 @@
               <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus odio arcu, accumsan sit amet fermentum eleifend, egestas eu nisi. Quisque eleifend id enim quis sagittis. Cras nec fermentum massa. Praesent felis nibh, dictum quis elementum scelerisque sed. .</p>
             </div>
             <!-- Information del juego -->
-
+             
+            <!-- hint para tap -->
+            <div class="tap-hint absolute inset-0 z-10 pointer-events-none opacity-0 transition-opacity duration-700">
+              <div class="absolute inset-0 bg-black bg-opacity-70 z-20">
+                <div class="flex items-center justify-center h-full z-30">
+                  <div class="text-white text-base tracking-wide text-center font-bold uppercase px-3 py-1 rounded-md">
+                    Tap for more info
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-
         
         <!-- Proyecto - Blasty Bubs -->
         <!-- Tag del Filtro -->
@@ -597,7 +722,17 @@
               <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus odio arcu, accumsan sit amet fermentum eleifend, egestas eu nisi. Quisque eleifend id enim quis sagittis. Cras nec fermentum massa. Praesent felis nibh, dictum quis elementum scelerisque sed. .</p>
             </div>
             <!-- Information del juego -->
-
+             
+            <!-- hint para tap -->
+            <div class="tap-hint absolute inset-0 z-10 pointer-events-none opacity-0 transition-opacity duration-700">
+              <div class="absolute inset-0 bg-black bg-opacity-70 z-20">
+                <div class="flex items-center justify-center h-full z-30">
+                  <div class="text-white text-base tracking-wide text-center font-bold uppercase px-3 py-1 rounded-md">
+                    Tap for more info
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -626,10 +761,19 @@
               <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus odio arcu, accumsan sit amet fermentum eleifend, egestas eu nisi. Quisque eleifend id enim quis sagittis. Cras nec fermentum massa. Praesent felis nibh, dictum quis elementum scelerisque sed. .</p>
             </div>
             <!-- Information del juego -->
-
+             
+            <!-- hint para tap -->
+            <div class="tap-hint absolute inset-0 z-10 pointer-events-none opacity-0 transition-opacity duration-700">
+              <div class="absolute inset-0 bg-black bg-opacity-70 z-20">
+                <div class="flex items-center justify-center h-full z-30">
+                  <div class="text-white text-base tracking-wide text-center font-bold uppercase px-3 py-1 rounded-md">
+                    Tap for more info
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-
       </div>
 
       <!-- Script de los filtros -->
@@ -663,13 +807,28 @@
         document.querySelectorAll('.portfolio-item').forEach(item => {
           item.addEventListener('click', () => {
             if (window.innerWidth < 640) {
-              document.querySelectorAll('.portfolio-item .group.active').forEach(el => {
+              const allGroups = document.querySelectorAll('.portfolio-item .group.active');
+              allGroups.forEach(el => {
                 el.classList.remove('active');
+                const overlay = el.parentElement.querySelector('.tap-overlay');
+                if (overlay) {
+                  overlay.style.opacity = 0;
+                  overlay.classList.remove('tap-overlay-animation');
+                }
               });
 
               const group = item.querySelector('.group');
-              if (!group.classList.contains('active')) {
+              const overlay = item.querySelector('.project-card .tap-overlay');
+
+              if (group && !group.classList.contains('active')) {
+                userInteracted = true;
                 group.classList.add('active');
+                if (overlay) {
+                  overlay.classList.remove('tap-overlay-animation');
+                  void overlay.offsetWidth;
+                  overlay.classList.add('tap-overlay-animation');
+                  overlay.style.opacity = 1;
+                }
               }
             }
           });
@@ -698,30 +857,32 @@
 
       <!-- Script que da un hint animado en las tarjetas en mobile -->      
       <script>
+        let userInteracted = false;
         const hintObserver = new IntersectionObserver((entries) => {
-          const visibles = [];
-
           entries.forEach(entry => {
             const group = entry.target.querySelector('.group');
             const hint = entry.target.querySelector('.tap-hint');
 
             if (!group || !hint) return;
 
-            if (entry.isIntersecting && window.innerWidth < 640 && !group.classList.contains('active')) {
-              visibles.push({ item: entry.target, hint });
+            if (entry.isIntersecting &&
+              window.innerWidth < 640 &&
+              !group.classList.contains('active') &&
+              !userInteracted &&
+              !hint.dataset.hinted
+            ) 
+            {
+              hint.classList.remove('opacity-0');
+              void hint.offsetWidth;
+              hint.dataset.hinted = "true";
+
+              setTimeout(() => {
+                hint.classList.add('opacity-0');
+              }, 1200); // duración de animación + margen
             } else {
-              hint.classList.add('hidden'); // oculta si sale o está activa
+              hint.classList.add('opacity-0');
             }
           });
-
-          visibles
-            .sort((a, b) => a.item.getBoundingClientRect().top - b.item.getBoundingClientRect().top)
-            .forEach(({ hint }, index) => {
-              setTimeout(() => {
-                hint.classList.remove('hidden');
-              }, index * 400); // efecto en cascada
-            });
-
         }, {
           threshold: 0.5
         });
@@ -730,6 +891,41 @@
           hintObserver.observe(item);
         });
       </script>
+
+      <!-- Script que verifica si se tapeo la tarjeta, si no muestro el hint -->      
+      <script>
+        setInterval(() => {
+          if (userInteracted) return; // si ya tocó una tarjeta, no hacemos nada
+
+          document.querySelectorAll('.portfolio-item').forEach(item => {
+            const group = item.querySelector('.group');
+            const hint = item.querySelector('.tap-hint');
+
+            if (!group || !hint) return;
+
+            // Verificamos si la tarjeta está visible
+            const rect = item.getBoundingClientRect();
+            const visible = rect.top >= 0 && rect.bottom <= window.innerHeight;
+
+            // Si es visible, mobile, y no está activa, mostramos el hint de nuevo
+            if (visible &&
+              window.innerWidth < 640 &&
+              !group.classList.contains('active') &&
+              !hint.dataset.hinted
+            ) 
+            {
+              hint.classList.remove('opacity-0');
+              void hint.offsetWidth; // reinicia animación
+
+              setTimeout(() => {
+                hint.classList.add('opacity-0');
+                hint.dataset.hinted = "true";
+              }, 1200); // tiempo que permanece visible
+            }
+          });
+        }, 8000); // cada 8 segundos intenta mostrar si no hubo interacción
+      </script>
+
     </section>
 
     <!------------------------------------- Blog ------------------------------------->
