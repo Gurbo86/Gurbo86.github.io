@@ -1,0 +1,63 @@
+@layer utilities {
+  /* ------ Project Section CSS - Utilities------ */
+
+  .generic-fade-to-disapearance {
+    @apply opacity-0 transition-opacity duration-300 ease-in-out group-[.active]:opacity-100 sm:opacity-100;
+  }
+
+  .generic-fade-in-overlay {
+    @apply opacity-0 transition-opacity duration-300 ease-in-out group-[.active]:opacity-50 sm:opacity-50;
+  }
+
+  .generic-fade-out {
+    @apply opacity-0 scale-95 transition-all duration-300 ease-in-out;
+  }
+
+  .generic-fade-in {
+    @apply opacity-100 scale-100 transition-all duration-300 ease-in-out;
+  }
+  
+  /* ------ Project Section CSS - Utilities------ */
+}
+
+@layer components {
+  
+  /* ------ Project Section CSS ------ */
+  
+  .project-filter-button {
+    @apply px-4 py-2 rounded shadow-md;
+  }
+
+  /*Project Cards*/
+  .project-card {
+    @apply relative bg-gray-800 rounded-xl shadow-md overflow-hidden h-[14rem] sm:h-[24rem] md:h-80 flex items-end;
+  }
+
+  .project-content {
+    @apply relative z-10 p-4 text-white;
+  }
+
+  .project-badge {
+    @apply absolute top-0 left-0 m-3 bg-black bg-opacity-70 px-3 py-1 text-white text-sm rounded-md z-10;
+  }
+
+  .company-logo {
+    @apply absolute top-0 right-0 m-3 bg-black bg-opacity-70 px-2 py-2 rounded-md z-10;
+  }
+
+  .company-logo img {
+    @apply h-8 w-auto transition-transform duration-300 ease-in-out group-hover:scale-105;
+  }
+
+  .project-title {
+    @apply text-xl font-semibold;
+  }
+
+  .project-description {
+    @apply text-sm;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}

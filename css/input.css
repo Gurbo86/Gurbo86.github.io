@@ -1,0 +1,9 @@
+@import './navbar.css';
+@import './styles.css';
+@import './projectSection.css';
+/* @import './css/projects.css'; */
+/* @import './css/utilities.css'; */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

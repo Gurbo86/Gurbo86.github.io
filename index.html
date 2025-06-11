@@ -18,15 +18,15 @@
   <body class="bg-black text-white">
 
     <!-- Header -->
-    <header class="fixed w-full bg-black bg-opacity-90 z-50">
+    <header class="site-header">
       <nav class="flex items-center justify-between px-4 py-4 max-w-full mx-auto whitespace-nowrap">
 
         <!-- Logo -->
-        <h1 class="text-lg font-bold">Gurbo's Game Development</h1>
+        <h1 class="site-title">Gurbo's Game Development</h1>
 
         <!-- Botón hamburguesa (visible solo en mobile) -->
-        <button id="menu-toggle" class="md:hidden text-white focus:outline-none ml-auto py-2">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <button id="menu-toggle" class="md:hidden button-base-config">
+          <svg class="button-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
@@ -72,6 +72,7 @@
           });
         });
       </script>
+
     </header>
 
     <!-------------------------------- Home ------------------------------------->
@@ -157,17 +158,17 @@
       <!-- Filtros de rol -->
       <!-- Visible solo en pantallas medianas y grandes -->
       <div class="hidden md:flex flex-wrap justify-center gap-2 mb-8">
-        <button onclick="filterProjects('all')" class="px-4 py-2 bg-white text-black rounded hover:bg-gray-200">All</button>
-        <button onclick="filterProjects('gameplayprogrammer')" class="px-4 py-2 bg-white text-black rounded hover:bg-gray-200">Gameplay Programmer</button>
-        <button onclick="filterProjects('toolsprogrammer')" class="px-4 py-2 bg-white text-black rounded hover:bg-gray-200">Tools Programmer</button>
-        <button onclick="filterProjects('uiprogrammer')" class="px-4 py-2 bg-white text-black rounded hover:bg-gray-200">UI Programmer</button>
-        <button onclick="filterProjects('gamedesigner')" class="px-4 py-2 bg-white text-black rounded hover:bg-gray-200">Game Designer</button>
-        <button onclick="filterProjects('techincaldesigner')" class="px-4 py-2 bg-white text-black rounded hover:bg-gray-200">Technical Designer</button>
-        <button onclick="filterProjects('systemsdesigner')" class="px-4 py-2 bg-white text-black rounded hover:bg-gray-200">Systems Designer</button>
-        <button onclick="filterProjects('economydesigner')" class="px-4 py-2 bg-white text-black rounded hover:bg-gray-200">Economy Designer</button>
-        <button onclick="filterProjects('leveldesigner')" class="px-4 py-2 bg-white text-black rounded hover:bg-gray-200">Level Designer</button>
-        <button onclick="filterProjects('uxdesigner')" class="px-4 py-2 bg-white text-black rounded hover:bg-gray-200">UX Designer</button>
-        <button onclick="filterProjects('producer')" class="px-4 py-2 bg-white text-black rounded hover:bg-gray-200">Producer</button>
+        <button onclick="filterProjects('all')" class="project-filter-button bg-white text-black hover:bg-gray-200">All</button>
+        <button onclick="filterProjects('gameplayprogrammer')" class="project-filter-button bg-white text-black hover:bg-gray-200">Gameplay Programmer</button>
+        <button onclick="filterProjects('toolsprogrammer')" class="project-filter-button bg-white text-black hover:bg-gray-200">Tools Programmer</button>
+        <button onclick="filterProjects('uiprogrammer')" class="project-filter-button bg-white text-black hover:bg-gray-200">UI Programmer</button>
+        <button onclick="filterProjects('gamedesigner')" class="project-filter-button bg-white text-black hover:bg-gray-200">Game Designer</button>
+        <button onclick="filterProjects('techincaldesigner')" class="project-filter-button bg-white text-black hover:bg-gray-200">Technical Designer</button>
+        <button onclick="filterProjects('systemsdesigner')" class="project-filter-button bg-white text-black hover:bg-gray-200">Systems Designer</button>
+        <button onclick="filterProjects('economydesigner')" class="project-filter-button bg-white text-black hover:bg-gray-200">Economy Designer</button>
+        <button onclick="filterProjects('leveldesigner')" class="project-filter-button bg-white text-black hover:bg-gray-200">Level Designer</button>
+        <button onclick="filterProjects('uxdesigner')" class="project-filter-button bg-white text-black hover:bg-gray-200">UX Designer</button>
+        <button onclick="filterProjects('producer')" class="project-filter-button bg-white text-black hover:bg-gray-200">Producer</button>
       </div>
 
       <!-- Combo box para mobile -->
@@ -190,19 +191,19 @@
       <!-- Grilla de Proyectos -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         
-        <!-- Proyecto - Rust Console - Industrial Update 1 & 2 -->
+        <!-- Proyecto - Rust Console -->
         <!-- Tag del Filtro -->
         <div class="portfolio-item fade-in" data-role="gamedesigner uxdesigner techincaldesigner">
           <div class="project-card generic-hover group md:items-end">
             <!-- Imagen de fondo -->
-            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('portfolio_media/RustConsole/industrial.jpg');"></div>
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('portfolio_media/RustConsole/RustConsoleBanner.png');"></div>
             <!-- Overlay oscuro solo en desktop -->
             <div class="absolute inset-0 bg-black generic-fade-in-overlay"></div>
 
             <!-- Information del juego -->
             <!-- Título del juego arriba a la izquierda -->
             <div class="project-badge generic-fade-to-disapearance">
-              Rust Console
+              Rust Console Edition
             </div>
             <!-- Logo de empresa arriba a la derecha con enlace - Double Eleven -->
             <div class="company-logo generic-fade-to-disapearance" title="Double Eleven">
@@ -212,208 +213,11 @@
             </div>
             <!-- Contenido encima -->
             <div class="project-content generic-fade-to-disapearance">
-              <h3 class="project-title">Industrial Update 1 & 2</h3>
-              <p class="project-description">Release of the industrial system that enable players to automatize several aspects of gameplay revolving around survival.</p>
-            </div>
-            <!-- Information del juego -->
-             
-            <!-- hint para tap -->
-            <div class="tap-hint absolute inset-0 z-10 pointer-events-none opacity-0 transition-opacity duration-700">
-              <div class="absolute inset-0 bg-black bg-opacity-70 z-20">
-                <div class="flex items-center justify-center h-full z-30">
-                  <div class="text-white text-base tracking-wide text-center font-bold uppercase px-3 py-1 rounded-md">
-                    Tap for more info
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Proyecto - Rust Console - Aquageddon Update 1 & 2 -->
-        <!-- Tag del Filtro -->
-        <div class="portfolio-item fade-in" data-role="gamedesigner uxdesigner techincaldesigner">
-          <div class="project-card generic-hover group md:items-end">
-            <!-- Imagen de fondo -->
-            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('portfolio_media/RustConsole/aquageddon.jpg');"></div>
-            <!-- Overlay oscuro -->
-            <div class="absolute inset-0 bg-black generic-fade-in-overlay"></div>
-          
-            <!-- Information del juego -->
-            <!-- Título del juego arriba a la izquierda -->
-            <div class="project-badge generic-fade-to-disapearance">
-              Rust Console
-            </div>
-            <!-- Logo de empresa arriba a la derecha con enlace - Double Eleven -->
-            <div class="company-logo generic-fade-to-disapearance" title="Double Eleven">
-              <a href="https://www.double11.com/" target="_blank" rel="noopener noreferrer">
-                <img src="companies_logos\double_eleven_limited_logo.jpg" alt="Double Eleven Logo">
-              </a>
-            </div>
-            <!-- Contenido encima -->
-            <div class="project-content generic-fade-to-disapearance">
-              <h3 class="project-title">Aquageddon Update 1 & 2</h3>
-              <p class="text-sm">Release of a package that incorporated a whole revamp of the map with map markers and the tactical pings, added new vehicles (Solo Submarine, Duo Submarine, and Tugboat) and also a new Monument, the Underwater Labs.</p>
-            </div>
-            <!-- Information del juego -->
-             
-            <!-- hint para tap -->
-            <div class="tap-hint absolute inset-0 z-10 pointer-events-none opacity-0 transition-opacity duration-700">
-              <div class="absolute inset-0 bg-black bg-opacity-70 z-20">
-                <div class="flex items-center justify-center h-full z-30">
-                  <div class="text-white text-base tracking-wide text-center font-bold uppercase px-3 py-1 rounded-md">
-                    Tap for more info
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Proyecto - Rust Console - Underground Assault -->
-        <!-- Tag del Filtro -->
-        <div class="portfolio-item fade-in" data-role="gamedesigner uxdesigner techincaldesigner">
-          <div class="project-card generic-hover group md:items-end">
-            <!-- Imagen de fondo -->
-            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('portfolio_media/RustConsole/undergroundassault.jpg');"></div>
-            <!-- Overlay oscuro -->
-            <div class="absolute inset-0 bg-black generic-fade-in-overlay"></div>
-          
-            <!-- Information del juego -->
-            <!-- Título del juego arriba a la izquierda -->
-            <div class="project-badge generic-fade-to-disapearance">
-              Rust Console
-            </div>
-            <!-- Logo de empresa arriba a la derecha con enlace - Double Eleven -->
-            <div class="company-logo generic-fade-to-disapearance" title="Double Eleven">
-              <a href="https://www.double11.com/" target="_blank" rel="noopener noreferrer">
-                <img src="companies_logos\double_eleven_limited_logo.jpg" alt="Double Eleven Logo">
-              </a>
-            </div>
-            <!-- Contenido encima -->
-            <div class="project-content generic-fade-to-disapearance">
-              <h3 class="project-title">Underground Assault</h3>
-              <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus odio arcu, accumsan sit amet fermentum eleifend, egestas eu nisi. Quisque eleifend id enim quis sagittis. Cras nec fermentum massa. Praesent felis nibh, dictum quis elementum scelerisque sed. .</p>
-            </div>
-            <!-- Information del juego -->
-             
-            <!-- hint para tap -->
-            <div class="tap-hint absolute inset-0 z-10 pointer-events-none opacity-0 transition-opacity duration-700">
-              <div class="absolute inset-0 bg-black bg-opacity-70 z-20">
-                <div class="flex items-center justify-center h-full z-30">
-                  <div class="text-white text-base tracking-wide text-center font-bold uppercase px-3 py-1 rounded-md">
-                    Tap for more info
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Proyecto - Rust Console - Horsepocalypse -->
-        <!-- Tag del Filtro -->
-        <div class="portfolio-item fade-in" data-role="gamedesigner uxdesigner techincaldesigner">
-          <div class="project-card generic-hover group md:items-end">
-            <!-- Imagen de fondo -->
-            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('portfolio_media/RustConsole/horspocalypse.jpg');"></div>
-            <!-- Overlay oscuro -->
-            <div class="absolute inset-0 bg-black generic-fade-in-overlay"></div>
-          
-            <!-- Information del juego -->
-            <!-- Título del juego arriba a la izquierda -->
-            <div class="project-badge generic-fade-to-disapearance">
-              Rust Console
-            </div>
-            <!-- Logo de empresa arriba a la derecha con enlace - Double Eleven -->
-            <div class="company-logo generic-fade-to-disapearance" title="Double Eleven">
-              <a href="https://www.double11.com/" target="_blank" rel="noopener noreferrer">
-                <img src="companies_logos\double_eleven_limited_logo.jpg" alt="Double Eleven Logo">
-              </a>
-            </div>
-            <!-- Contenido encima -->
-            <div class="project-content generic-fade-to-disapearance">
-              <h3 class="project-title">Horsepocalypse</h3>
-              <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus odio arcu, accumsan sit amet fermentum eleifend, egestas eu nisi. Quisque eleifend id enim quis sagittis. Cras nec fermentum massa. Praesent felis nibh, dictum quis elementum scelerisque sed. .</p>
-            </div>
-            <!-- Information del juego -->
-             
-            <!-- hint para tap -->
-            <div class="tap-hint absolute inset-0 z-10 pointer-events-none opacity-0 transition-opacity duration-700">
-              <div class="absolute inset-0 bg-black bg-opacity-70 z-20">
-                <div class="flex items-center justify-center h-full z-30">
-                  <div class="text-white text-base tracking-wide text-center font-bold uppercase px-3 py-1 rounded-md">
-                    Tap for more info
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Proyecto - Rust Console - Cultivator -->
-        <!-- Tag del Filtro -->
-        <div class="portfolio-item fade-in" data-role="gamedesigner uxdesigner techincaldesigner">
-          <div class="project-card generic-hover group md:items-end">
-            <!-- Imagen de fondo -->
-            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('portfolio_media/RustConsole/cultivator.jpg');"></div>
-            <!-- Overlay oscuro -->
-            <div class="absolute inset-0 bg-black generic-fade-in-overlay"></div>
-          
-            <!-- Information del juego -->
-            <!-- Título del juego arriba a la izquierda -->
-            <div class="project-badge generic-fade-to-disapearance">
-              Rust Console
-            </div>
-            <!-- Logo de empresa arriba a la derecha con enlace - Double Eleven -->
-            <div class="company-logo generic-fade-to-disapearance" title="Double Eleven">
-              <a href="https://www.double11.com/" target="_blank" rel="noopener noreferrer">
-                <img src="companies_logos\double_eleven_limited_logo.jpg" alt="Double Eleven Logo">
-              </a>
-            </div>
-            <!-- Contenido encima -->
-            <div class="project-content generic-fade-to-disapearance">
-              <h3 class="project-title">Cultivator</h3>
-              <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus odio arcu, accumsan sit amet fermentum eleifend, egestas eu nisi. Quisque eleifend id enim quis sagittis. Cras nec fermentum massa. Praesent felis nibh, dictum quis elementum scelerisque sed. .</p>
-            </div>
-            <!-- Information del juego -->
-             
-            <!-- hint para tap -->
-            <div class="tap-hint absolute inset-0 z-10 pointer-events-none opacity-0 transition-opacity duration-700">
-              <div class="absolute inset-0 bg-black bg-opacity-70 z-20">
-                <div class="flex items-center justify-center h-full z-30">
-                  <div class="text-white text-base tracking-wide text-center font-bold uppercase px-3 py-1 rounded-md">
-                    Tap for more info
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Proyecto - Rust Console - Powersurge -->
-        <!-- Tag del Filtro -->
-        <div class="portfolio-item fade-in" data-role="gamedesigner uxdesigner techincaldesigner">
-          <div class="project-card generic-hover group md:items-end">
-            <!-- Imagen de fondo -->
-            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('portfolio_media/RustConsole/powersurge.jpg');"></div>
-            <!-- Overlay oscuro -->
-            <div class="absolute inset-0 bg-black generic-fade-in-overlay"></div>
-            
-            <!-- Information del juego -->
-            <!-- Título del juego arriba a la izquierda -->
-            <div class="project-badge generic-fade-to-disapearance">
-              Rust Console
-            </div>
-            <!-- Logo de empresa arriba a la derecha con enlace - Double Eleven -->
-            <div class="company-logo generic-fade-to-disapearance" title="Double Eleven">
-              <a href="https://www.double11.com/" target="_blank" rel="noopener noreferrer">
-                <img src="companies_logos\double_eleven_limited_logo.jpg" alt="Double Eleven Logo">
-              </a>
-            </div>
-            <!-- Contenido encima -->
-            <div class="project-content generic-fade-to-disapearance">
-              <h3 class="project-title">Powersurge</h3>
-              <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus odio arcu, accumsan sit amet fermentum eleifend, egestas eu nisi. Quisque eleifend id enim quis sagittis. Cras nec fermentum massa. Praesent felis nibh, dictum quis elementum scelerisque sed. .</p>
+              <!--<h3 class="project-title">Rust Console Edition</h3>-->
+              <p class="project-description">
+                Worked on the console version of one of the most famous and successful multiplaye survival games in the market for almost 10 years.
+                <a href="project_pages\projectRust.html" target="_blank" class="text-blue-600 underline hover:text-blue-800">Read more.</a> 
+              </p>
             </div>
             <!-- Information del juego -->
              
@@ -953,16 +757,21 @@
     <!------------------------------------- Footer ------------------------------------->
     <!-- Social icons floating -->
     <div class="fixed bottom-6 right-6 flex flex-col items-center space-y-3 z-50">
-    <a href="https://github.com/Gurbo86" target="_blank" class="bg-white text-black p-2 rounded-full shadow hover:bg-gray-200 transition">
-      <i class="fab fa-github"></i>
-    </a>
-    <a href="https://www.linkedin.com/in/leonel-maguet-a2b756b/" target="_blank" class="bg-white text-blue-600 p-2 rounded-full shadow hover:bg-blue-100 transition">
-      <i class="fab fa-linkedin-in"></i>
-    </a>
-    <a href="mailto:leonel.maguet@gmail.com" class="bg-white text-red-600 p-2 rounded-full shadow hover:bg-red-100 transition">
-      <i class="fas fa-envelope"></i>
-    </a>
+      <a href="https://github.com/Gurbo86" target="_blank" class="bg-white text-black p-2 rounded-full shadow hover:bg-gray-200 transition">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/leonel-maguet-a2b756b/" target="_blank" class="bg-white text-blue-600 p-2 rounded-full shadow hover:bg-blue-100 transition">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <a href="mailto:leonel.maguet@gmail.com" class="bg-white text-red-600 p-2 rounded-full shadow hover:bg-red-100 transition">
+        <i class="fas fa-envelope"></i>
+      </a>
     </div>
+
+    
+    <footer class="text-center py-4 bg-gray-900 text-sm">
+      &copy; 2025 Gurbo
+    </footer>
 
   </body>
 </html>

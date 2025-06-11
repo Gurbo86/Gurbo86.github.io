@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rust Console Edition</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link href="../css/output.css" rel="stylesheet">
+    <style>
+      .hero-section {
+        height: 70vh;
+        position: relative;
+        z-index: 0;
+      }
+
+      .main-overlap {
+        position: relative;
+        z-index: 10;
+        background-color: white;
+        border-top-left-radius: 2rem;
+        border-top-right-radius: 2rem;
+        padding-top: 2rem;
+        padding-bottom: 5rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+
+      .grid-style {
+        display: grid;                   /* grid */
+        grid-template-columns: 1;      /* grid-cols-1 */
+        gap: 1.5rem;                     /* gap-6 */
+        align-items: start;              /* items-start */
+      }
+
+      .column-style {
+        display: flex;            /* flex */
+        flex-direction: column;   /* flex-col */
+        justify-content: center;  /* justify-center */
+      }
+
+      .description-paragraph-style {
+        font-size: 0.875rem      /* 14px */;
+        text-align: left;        /* text-left */
+        line-height: 1.25rem;    /* text-sm (line-height) */
+        margin-bottom: 0.5rem;   /* mb-2 */
+      }
+
+      .description-paragraph-list {
+        list-style-type: disc;         /* list-disc */
+        list-style-position: inside;   /* list-inside */
+        padding-left: 0.5rem;          /* pl-2 */
+        text-align: left;              /* text-left */
+        font-size: 0.875rem;           /* text-sm */
+      }
+      
+      h2 {
+        color: #cb432b;
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 3rem;
+        font-weight: 400;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        line-height: 1.1;
+      }
+
+      h3 {
+        color: #cb432b;
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 2rem;
+        font-weight: 200;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        line-height: 1.1;
+      }
+
+      @media (min-width: 1024px) {
+        h2 {
+          font-size: 3.75rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="bg-gray-100 text-gray-800 flex flex-col min-h-screen">
+
+    <!-- Header -->
+    <header class="site-header">
+      <nav class="flex items-center justify-between px-4 py-4 max-w-full mx-auto whitespace-nowrap">
+
+        <!-- Logo -->
+        <h1 class="site-title">Gurbo's Game Development</h1>
+        
+        <!-- Botón de retorno (visible solo en mobile) -->
+        <a href="../index.html" class="button-base-config">
+          <span class="font-bold">Home</span>
+        </a>
+
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section flex flex-col items-center justify-center text-white text-center bg-black pt-24 overflow-hidden">
+      <!-- Background Image -->
+      <div class="absolute inset-0 -z-10">
+        <div class="h-full w-full bg-cover bg-center bg-fixed filter blur-sm opacity-40" style="background-image: url('../portfolio_media/RustConsole/RustConsoleBanner2r.png');"></div>
+      </div>
+
+      <!-- Content -->
+      <div class="relative z-10">
+        <!-- Logo -->
+        <img src="../portfolio_media/RustConsole/rustlogo.png" alt="Logo Industrial" class="mx-auto h-24 mb-4">
+        <!-- Tagline -->
+        <p class="text-xl mt-4">Life is pain. Rust is Pain. Rust is Life.</p>
+        <!-- Links to Stores -->
+        <div class="flex justify-center mt-6 space-x-4">
+          <a href="https://store.playstation.com/en-gb/product/EP4415-CUSA14307_00-D11PROJECTRUST01" target="_blank" class="bg-white bg-opacity-100 rounded-full p-2 hover:bg-opacity-80">
+            <img src="../img/playstation.svg" alt="PS" class="h-8">
+          </a>
+          <a href="https://www.xbox.com/en-GB/games/store/rust-console-edition/brpvtjkwhbr7" target="_blank" class="bg-white bg-opacity-100 rounded-full p-2 hover:bg-opacity-80">
+            <img src="../img/xbox.svg" alt="Xbox" class="h-8">
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Separador Hero Section / Main Section - SVG Transition -->
+    <div class="elementor-shape elementor-shape-bottom" data-negative="false">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 5.8" preserveAspectRatio="none">
+        <path class="elementor-shape-fill" d="M5.4.4l5.4 5.3L16.5.4l5.4 5.3L27.5.4 33 5.7 38.6.4l5.5 5.4h.1L49.9.4l5.4 5.3L60.9.4l5.5 5.3L72 .4l5.5 5.3L83.1.4l5.4 5.3L94.1.4l5.5 5.4h.2l5.6-5.4 5.5 5.3 5.6-5.3 5.4 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.5 5.4h.2l5.6-5.4 5.4 5.3L161 .4l5.4 5.3L172 .4l5.5 5.3 5.6-5.3 5.4 5.3 5.7-5.3 5.4 5.4h.2l5.6-5.4 5.5 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.4 5.3 5.6-5.3 5.5 5.4h.2l5.6-5.4 5.5 5.3L261 .4l5.4 5.3L272 .4l5.5 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.5 5.4h.1l5.7-5.4 5.4 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.4 5.3 5.7-5.3 5.4 5.4h.2l5.6-5.4 5.5 5.3L361 .4l5.5 5.3 5.6-5.3 5.4 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.5 5.4h.1l5.7-5.4 5.4 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.5 5.4h.1l5.6-5.4 5.5 5.3L461 .4l5.5 5.3 5.6-5.3 5.4 5.3 5.7-5.3 5.4 5.3 5.6-5.3 5.5 5.4h.2l5.6-5.4 5.5 5.3 5.6-5.3 5.4 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.5 5.4h.1L550 .4l5.4 5.3L561 .4l5.5 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.4 5.3 5.6-5.3 5.5 5.4h.2l5.6-5.4 5.5 5.3 5.6-5.3 5.4 5.3 5.7-5.3 5.4 5.3 5.6-5.3 5.5 5.4h.2L650 .4l5.5 5.3 5.6-5.3 5.4 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.4 5.4h.2l5.6-5.4 5.5 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.4 5.3 5.6-5.3 5.5 5.4h.2L750 .4l5.5 5.3 5.6-5.3 5.4 5.3 5.7-5.3 5.4 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.5 5.4h.1l5.7-5.4 5.4 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.4 5.4h.2L850 .4l5.5 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.4 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.5 5.4h.2l5.6-5.4 5.4 5.3 5.7-5.3 5.4 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.5 5.4h.1l5.7-5.4 5.4 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.4 5.3 5.6-5.3 5.5 5.4h.2l5.6-5.4 5.5 5.3 5.6-5.3 5.4 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.5 5.4h.2l5.6-5.4 5.4 5.3 5.7-5.3 5.4 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.4 5.4h.2l5.6-5.4 5.5 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.4 5.3 5.6-5.3 5.5 5.4h.2l5.6-5.4 5.5 5.3 5.6-5.3 5.4 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.5 5.4h.1l5.7-5.4 5.4 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.4 5.4h.2l5.6-5.4 5.5 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.4 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.5 5.4h.2l5.6-5.4 5.4 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.5 5.4h.1l5.7-5.4 5.4 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.4 5.3 5.6-5.3 5.5 5.4h.2l5.6-5.4 5.5 5.3 5.6-5.3 5.4 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.5 5.4h.2l5.6-5.4 5.4 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.4 5.3 5.7-5.3 5.4 5.4h.2l5.6-5.4 5.5 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.4 5.3 5.6-5.3 5.5 5.4h.2l5.6-5.4 5.5 5.3 5.6-5.3 5.4 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.5 5.4h.1l5.6-5.4 5.5 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.4 5.3 5.7-5.3 5.4 5.4h.2l5.6-5.4 5.5 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.4 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.5 5.4h.1l5.7-5.4 5.4 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.5 5.4h.1l5.6-5.4 5.5 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.4 5.3 5.7-5.3 5.4 5.3 5.6-5.3 5.5 5.4V0H-.2v5.8z"></path>
+      </svg>
+    </div>
+
+    <!-- Intro Main Section -->
+    <section class="relative z-20 mt-12 mb-8 px-6 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+
+      <!-- Columna izquierda: Imagen (opcional) -->
+      <div class="flex justify-end relative z-30 -mt-16 md:-mt-32">
+        <img src="../portfolio_media/RustConsole/RustCharacter.png" alt="Vista previa del proyecto" class="object-contain">
+      </div>
+
+      <!-- Columna central: Overview -->
+      <div class="column-style object-contain h-full">
+        <h2 class="mb-2">ABOUT RUST CONSOLE</h2>
+        <p class="text-base text-gray-700">
+          <strong>Rust Console Edition</strong> brings the acclaimed PC survival sandbox to Xbox & PlayStation — 
+          now with full cross-play. Up to <strong>100 players</strong> scavenge, build and raid across procedurally 
+          generated worlds that wipe every month, so every season feels new. Since launch, the franchise has sold 
+          <strong>12 million+ copies worldwide</strong> and still draws <strong>100 000+ concurrent survivors</strong> 
+          daily, securing its place among the most-played console titles.
+        </p>
+      </div>
+
+      <!-- Columna derecha: Features (opcional) -->
+      <div class="column-style object-contain h-full">
+        <h2 class="mb-2">FEATURES</h2>
+        <ul class="list-disc list-inside text-gray-700 space-y-1">
+          <li>Persistent <em>open-world</em> PvP survival with monthly wipes</li>
+          <li>Deep <strong>crafting&nbsp;&amp;&nbsp;base-building</strong> system</li>
+          <li>Dynamic <strong>raiding &amp; siege</strong> combat with explosives</li>
+          <li>Multiple Modular systems for <strong>electricity, fluids&nbsp;&amp;&nbsp;industrial automation</strong></li>
+          <li>Rideable <strong>horses, boats, submarines &amp; helicopters </strong></li>
+          <li><strong>Controller-first UI</strong> with accessibility options</li>
+          <li>Regular free <strong>content updates</strong> and live events</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Main content -->
+    <main class="main-overlap px-4 padding-top py-12 max-w-[1100px] mx-auto space-y-12">
+      <section>
+        <div class="column-style object-contain h-full">
+          <h2 class="mb-2">Project Description</h2>
+          <p class="text-lg">
+              As the <strong>sole Game Designer, Technical Designer, and UI/UX Designer</strong> on a
+              33-person team—<strong>15 engineers, 10 QA, 5 artists, and 3 producers</strong> operating
+              between Kuala Lumpur and the United Kingdom—I owned the entire design
+              pipeline for Rust Console. I pitched and prototyped new mechanics
+              tailored for console, produced end-to-end documentation, and acted as the
+              cross-project bridge, unblocking implementation questions and aligning
+              roadmaps. Beyond feature conception, I ran on-device
+              play-tests, checked regularly on the community sentiment, and iterated rapidly
+              to keep our schedule monthly release cadence on target.
+          </p>
+        </div>
+      </section>
+
+      <section class="grid grid-cols-1 md:grid-cols-5 gap-8">
+
+        <!-- Columna izquierda: Contribuciones -->
+        <div class="md:col-span-3 flex flex-col items-begin">
+          <h2 class="mb-2">Project Contributions</h2>
+          <ul class="list-disc list-inside space-y-1 text-left">
+            <li><strong>Leaded</strong> the all the design tasks of the project.</li>
+            <li>Delivered all design tasks in a tight <strong>3 month time pipeline</strong>.</li>
+            <li>Clear <strong>cross department comunication</strong>, relying mostly on production and QA.</li>
+            <li>Spearheaded the integration old and future documentation to a <strong>Notion Wiki</strong>.</li>
+            <li>Investigated the code and documented preexisting mechanics, in math notation with <strong>Katex</strong>, for future designers.</li>
+            <li>Tested and modified through <strong>Unity Engine and C# code</strong>, several new mechanics.</li>
+            <li>Provided full design proposals for comunity servers tools, from ideas to <strong>UI/UX interfaces</strong> with full support for console.</li>
+            <li>In the last months I <strong>mentored and leaded</strong> placements designers.</li>
+          </ul>
+        </div>
+
+        <!-- Columna derecha: Detalles + Tecnologías -->
+        <div class="md:col-span-2 flex flex-col gap-8">
+          <!-- Detalles del Proyecto -->
+          <div class="column-style object-contain h-full">
+            <h3 class="mb-2">Projects Details</h3>
+            <p><strong>Studio:</strong> Double Eleven</p>
+            <p><strong>Platforms:</strong> PlayStation, Xbox</p>
+            <p><strong>Release Date:</strong> 2023</p>
+            <p><strong>Updates Frecuency:</strong> 1 to 3 months</p>
+          </div>
+
+          <!-- Tecnologías Utilizadas -->
+          <div class="column-style object-contain h-full">
+            <h3 class="mb-2">Tools Used</h3>
+            <ul class="list-disc list-inside space-y-1 grid grid-cols-2 gap-x-4">
+              <li class="flex items-center gap-2">
+                <img src="../img/unity.svg" alt="⦿" class="w-5 h-5">
+                Unity
+              </li>
+              <li class="flex items-center gap-2">
+                <img src="../img/cSharp.svg" alt="⦿" class="w-5 h-5">
+                C#
+              </li>
+              <li class="flex items-center gap-2">
+                <img src="../img/visualStudio.svg" alt="⦿" class="w-5 h-5">
+                Visual Studio
+              </li>
+              <li class="flex items-center gap-2">
+                <img src="../img/svn.svg" alt="⦿" class="w-5 h-5">
+                SVN
+              </li>
+              <li class="flex items-center gap-2">
+                <img src="../img/notion.svg" alt="⦿" class="w-5 h-5">
+                Notion
+              </li>
+              <li class="flex items-center gap-2">
+                <img src="../img/KaTeX.svg" alt="⦿" class="w-5 h-5">
+                Katex
+              </li>
+              <li class="flex items-center gap-2">
+                <img src="../img/Xd.svg" alt="⦿" class="w-5 h-5">
+                Adobe Xd
+              </li>
+              <li class="flex items-center gap-2">
+                <img src="../img/Ps.svg" alt="⦿" class="w-5 h-5">
+                Adobe Photoshop
+              </li>
+              <li class="flex items-center gap-2">
+                <img src="../img/jira.svg" alt="⦿" class="w-5 h-5">
+                Jira
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Separadores -->
+      <!-- <hr class="my-12 border-t-2 border-gray-300 rounded"> -->
+      <div class="my-12 flex justify-center">
+        <div class="w-64 h-1 bg-gradient-to-r from-orange-400 via-red-400 to-pink-400 rounded"></div>
+      </div>
+      
+      <section>
+        <h2 class="mb-4">Releases</h2>
+
+        <h3 class="mt-12 mb-4">Gen 9</h3>
+        <div class="grid-style lg:grid-cols-2">
+          <!-- Carrousel -->
+          <div class="column-style">
+            <!-- Carousel container -->
+            <div class="relative w-full max-w-xl mx-auto">
+              <!-- Slides -->
+              <div class="overflow-hidden rounded shadow-md">
+                <div class="flex transition-transform duration-500" style="transform: translateX(var(--carousel-offset, 0%));" data-carousel id="carousel-track-gen9">
+                  <!-- Slide 1: Imagen -->
+                  <div class="min-w-full flex-shrink-0 flex flex-col items-center">
+                    <div class="aspect-w-16 aspect-h-9 w-full">
+                      <img src="../portfolio_media/RustConsole/gen91.jpg" alt="Gen9 Image" class="w-full h-full object-cover rounded">
+                    </div>
+                  </div>
+                  <!-- Slide 2: Imagen -->
+                  <div class="min-w-full flex-shrink-0 flex flex-col items-center">
+                    <div class="aspect-w-16 aspect-h-9 w-full">
+                      <img src="../portfolio_media/RustConsole/gen92.jpg" alt="Gen9 Image" class="w-full h-full object-cover rounded">
+                    </div>
+                  </div>
+                  <!-- Slide 2: Video 1 -->
+                  <div class="min-w-full flex-shrink-0 flex flex-col items-center">
+                    <div class="aspect-w-16 aspect-h-9 w-full">
+                      <iframe
+                        src="https://www.youtube.com/embed/qzEWVoqyw3k"
+                        title="Trailer Gen 9 video"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                        class="w-full h-full rounded"
+                      ></iframe>
+                    </div>
+                  </div>
+                  <!-- Slide 3: Video 2 -->
+                  <div class="min-w-full flex-shrink-0 flex flex-col items-center">
+                    <div class="aspect-w-16 aspect-h-9 w-full">
+                      <iframe
+                        src="https://www.youtube.com/embed/iM9GZJhjDcs"
+                        title="Trailer Gen 9 Preorder video"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                        class="w-full h-full rounded"
+                      ></iframe>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Controls -->
+              <div class="absolute inset-0 flex items-center justify-between px-2 pointer-events-none">
+                <button type="button" class="carousel-prev pointer-events-auto bg-white bg-opacity-80 rounded-full p-2 shadow hover:bg-opacity-100 transition">
+                  <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                  </svg>
+                </button>
+                <button type="button" class="carousel-next pointer-events-auto bg-white bg-opacity-80 rounded-full p-2 shadow hover:bg-opacity-100 transition">
+                  <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Description and Bullets -->
+          <div class="column-style">
+            <p class="description-paragraph-style">
+              <strong>Gen 9</strong> was the last update that I worked on before leaving the project and the company.
+              It will be one of the biggest updates that introduce new features, mechanics, and content to the game. 
+              The main feature production was trying to push is peak graphics with good performance in new gen consoles.
+              Thanks to the normalization of the vehicle controls, that I introduced previously 
+              (<a href="https://rust.double11.com/news/dev-blog-35" target="_blank" class="text-blue-600 underline hover:text-blue-800">Dev Blog #35</a>) 
+              new vehicles can be introduced in simpler ways, with less issues.
+            </p>
+            <p class="description-paragraph-style">
+              Below I add some of the things I worked on for this update:
+            </p>
+            <ul class="description-paragraph-list">
+              <li>Design and introduced helicopters and player controled drones.</li>
+              <li>Design and introduce the new tech tree.</li>
+              <li>Introduced the Fishing Update (minor one, but there).</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 class="mt-12 mb-4">Comunity Servers</h3>
+        <div class="grid-style lg:grid-cols-2">
+          <!-- Description and Bullets -->
+          <div class="column-style">
+            <p class="description-paragraph-style">
+              <strong>Community servers</strong> were my first and last task, in some way, while working 
+              on this project. My work for this regular update involved designing and 
+              implementing tools that would enable the community to create their servers. 
+              This included the design of the UI/UX interfaces, the design of the mechanics, 
+              and the documentation of all the systems.
+            </p>
+            <p class="description-paragraph-style">
+              Below, I add some of the things I worked on for this update:
+            </p>
+            <ul class="description-paragraph-list">
+              <li>Design all the UI and Functionalities of server administration.</li>
+              <li>Design all the UI and Functionalities of Items Spawn, Entities Spawn, and the Commands Tool.</li>
+              <li>Design all the UI and Functionalities of the Scheduler Tool.</li>
+              <li>Design all the UI and Functionalities of Kit Creation and the way players were able to acquire.</li>
+              <li>Design all the UI and Functionalities of the Welcome to Server Page.</li>
+              <li>Design all the UI and Functionalities of the Server Tags and Filters.</li>
+              <li>Redesign of the Loading Screen.</li>
+              <li>Redesign of the Server Preview Pane.</li>
+              <li>Redesign of the Combat Log.</li>
+              <li>Design all the UI and Functionalities of Server Messenger (unreleased).</li>
+              <li>Design all the UI and Functionalities of Raidable Bases and Level Design tools (unreleased).</li>
+            </ul>
+          </div>
+
+          <!-- Carrousel -->
+          <div class="column-style">
+            <!-- Carousel container -->
+            <div class="relative w-full max-w-xl mx-auto">
+              <!-- Slides -->
+              <div class="overflow-hidden rounded shadow-md">
+                <div class="flex transition-transform duration-500" style="transform: translateX(var(--carousel-offset, 0%));" data-carousel id="carousel-track-comunity-servers">
+                  <!-- Slide 1: Imagen -->
+                  <div class="min-w-full flex-shrink-0 flex flex-col items-center">
+                    <div class="aspect-w-16 aspect-h-9 w-full">
+                      <img src="../portfolio_media/RustConsole/ComunityServer1.jpg" alt="Gen9 Image" class="w-full h-full object-cover rounded">
+                    </div>
+                  </div>
+                  <!-- Slide 2: Imagen -->
+                  <div class="min-w-full flex-shrink-0 flex flex-col items-center">
+                    <div class="aspect-w-16 aspect-h-9 w-full">
+                      <img src="../portfolio_media/RustConsole/ComunityServer2.jpg" alt="Gen9 Image" class="w-full h-full object-cover rounded">
+                    </div>
+                  </div>
+                  <!-- Slide 2: Video 1 -->
+                  <div class="min-w-full flex-shrink-0 flex flex-col items-center">
+                    <div class="aspect-w-16 aspect-h-9 w-full">
+                      <iframe
+                        src="https://www.youtube.com/embed/1gJ2pjjl5P8"
+                        title="Trailer Gen 9 video"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                        class="w-full h-full rounded"
+                      ></iframe>
+                    </div>
+                  </div>
+                  <!-- Slide 3: Video 2 -->
+                  <div class="min-w-full flex-shrink-0 flex flex-col items-center">
+                    <div class="aspect-w-16 aspect-h-9 w-full">
+                      <iframe
+                        src="https://www.youtube.com/embed/dpuSsooWpUE"
+                        title="Trailer Gen 9 Preorder video"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                        class="w-full h-full rounded"
+                      ></iframe>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Controls -->
+              <div class="absolute inset-0 flex items-center justify-between px-2 pointer-events-none">
+                <button type="button" class="carousel-prev pointer-events-auto bg-white bg-opacity-80 rounded-full p-2 shadow hover:bg-opacity-100 transition">
+                  <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                  </svg>
+                </button>
+                <button type="button" class="carousel-next pointer-events-auto bg-white bg-opacity-80 rounded-full p-2 shadow hover:bg-opacity-100 transition">
+                  <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <h3 class="mt-12 mb-4">Industrial</h3>
+        <div class="grid-style lg:grid-cols-2">
+          <!-- Carrousel -->
+          <div class="column-style">
+              <!-- Carousel container -->
+              <div class="relative w-full max-w-xl mx-auto">
+                <!-- Slides -->
+                <div class="overflow-hidden rounded shadow-md">
+                  <div class="flex transition-transform duration-500" style="transform: translateX(var(--carousel-offset, 0%));" data-carousel id="carousel-track-industrial">
+                    <!-- Slide 1: Imagen -->
+                    <div class="min-w-full flex-shrink-0 flex flex-col items-center">
+                      <div class="aspect-w-16 aspect-h-9 w-full">
+                        <img src="../portfolio_media/RustConsole/industrial.jpg" alt="Gen9 Image" class="w-full h-full object-cover rounded">
+                      </div>
+                    </div>
+                    <!-- Slide 2: Video 1 -->
+                    <div class="min-w-full flex-shrink-0 flex flex-col items-center">
+                      <div class="aspect-w-16 aspect-h-9 w-full">
+                        <iframe
+                          src="https://www.youtube.com/embed/20lYto09kZU"
+                          title="Trailer Gen 9 video"
+                          frameborder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowfullscreen
+                          class="w-full h-full rounded"
+                        ></iframe>
+                      </div>
+                    </div>
+                    <!-- Slide 3: Video 2 -->
+                    <div class="min-w-full flex-shrink-0 flex flex-col items-center">
+                      <div class="aspect-w-16 aspect-h-9 w-full">
+                        <iframe
+                          src="https://www.youtube.com/embed/I46c7TXMWD4"
+                          title="Trailer Gen 9 Preorder video"
+                          frameborder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowfullscreen
+                          class="w-full h-full rounded"
+                        ></iframe>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Controls -->
+                <div class="absolute inset-0 flex items-center justify-between px-2 pointer-events-none">
+                  <button type="button" class="carousel-prev pointer-events-auto bg-white bg-opacity-80 rounded-full p-2 shadow hover:bg-opacity-100 transition">
+                    <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                    </svg>
+                  </button>
+                  <button type="button" class="carousel-next pointer-events-auto bg-white bg-opacity-80 rounded-full p-2 shadow hover:bg-opacity-100 transition">
+                    <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+          </div>
+
+          <!-- Description and Bullets -->
+          <div class="column-style">
+            <p class="description-paragraph-style">
+              For the <strong>Industrial Update</strong>, I was responsible for the design and implementation of the
+              <strong>Industrial Automation System</strong>, which included the Pipe Tool, Conveyors, Splitters, and Crafters.
+              Additionally for the second part of the update, I introduced the drone marketplace, which allowed players to buy
+              and sell items through drones and to any vending machine installed in the world. This way players could
+              trade resources, weapons, clothing, and other items in a new way.
+            </p>
+            <p class="description-paragraph-style">
+              Here I leave a link to the 
+              <a href="https://rust.double11.com/news/dev-blog-31" target="_blank" class="text-blue-600 underline hover:text-blue-800">Dev Blog #31</a> 
+              and <a href="https://rust.double11.com/news/dev-blog-32" target="_blank" class="text-blue-600 underline hover:text-blue-800">Dev Blog #32</a>
+              , which were used to inform the players.
+            </p>
+            <p class="description-paragraph-style">
+              Below I add some of the things I worked on for this update:
+            </p>
+            <ul class="description-paragraph-list">
+              <li>Design of the Conveyor Belt mechanics and UI, core for the update.</li>
+              <li>Design of the Pipe Tool mechanics and UI, core to the update.</li>
+              <li>Design of the Industrial Crafter mechanics and UI, core to the update.</li>
+              <li>Re-design of backpacks mechanics and UI.</li>
+              <li>Design of the Electric Furnace UI.</li>
+              <li>Design of the drone marketplace UI and re-design of the mechanics.</li>
+              <li>Polishing and bug fixing of Wire Tools. New mechanics introduced.</li>
+            </ul>
+          </div>
+        </div>
+      
+        <h3 class="mt-12 mb-4">Aquageddon</h3>
+        <div class="grid-style lg:grid-cols-2">
+
+          <!-- Description and Bullets -->
+          <div class="column-style">
+            <p class="description-paragraph-style">
+              <strong>Aquageddon</strong> was an interesting update that required me to 
+              introduce some significant changes to the game's map, because of the 
+              introduction of the Underwater Labs monument I have to create a new 
+              section in that enabled the players to filter the things they prefer to 
+              see on it. Also, I introduced the inspect option in the gestures 
+              menu and added new weapons and vehicles to the game.
+            </p>
+            <p class="description-paragraph-style">
+              Here I leave a link to the 
+              <a href="https://rust.double11.com/news/dev-blog-28-aquageddon" target="_blank" class="text-blue-600 underline hover:text-blue-800">Dev Blog #28</a> 
+              and <a href="https://rust.double11.com/news/dev-blog-29-aquageddon-act-two" target="_blank" class="text-blue-600 underline hover:text-blue-800">Dev Blog #29</a>.
+              , which were used to inform the players.
+            </p>
+            <p class="description-paragraph-style">
+              Below I add some of the things I worked on for this update:
+            </p>
+            <ul class="description-paragraph-list">
+              <li>Re-design Ping Markers (tactical tool available with binoculars) and Map Markers.</li>
+              <li>Improvement of the map legend and design of the filter system.</li>
+              <li>Re-design of the compass. This was required because of markers introduction.</li>
+              <li>Design of weapons inspection by adding it in gestures menu. (Innovating totally the concept)</li>
+              <li>Design of controls, adaptation of mechanics and Solo Submarine, Intoduction Duo Submarine and Tugboat.</li>
+            </ul>
+          </div>
+
+          <!-- Carrousel -->
+          <div class="flex flex-col items-center justify-center">
+            <!-- Carousel container -->
+            <div class="relative w-full max-w-xl mx-auto">
+              <!-- Slides -->
+              <div class="overflow-hidden rounded shadow-md">
+                <div class="flex transition-transform duration-500" style="transform: translateX(var(--carousel-offset, 0%));" data-carousel id="carousel-track-Aquageddon">
+                    <!-- Slide 1: Imagen -->
+                    <div class="min-w-full flex-shrink-0 flex flex-col items-center">
+                      <div class="aspect-w-16 aspect-h-9 w-full">
+                        <img src="../portfolio_media/RustConsole/aquageddon1.jpg" alt="Gen9 Image" class="w-full h-full object-cover rounded">
+                      </div>
+                    </div>
+                    <!-- Slide 2: Imagen -->
+                    <div class="min-w-full flex-shrink-0 flex flex-col items-center">
+                      <div class="aspect-w-16 aspect-h-9 w-full">
+                        <img src="../portfolio_media/RustConsole/aquageddon2.jpg" alt="Gen9 Image" class="w-full h-full object-cover rounded">
+                      </div>
+                    </div>
+                    <!-- Slide 3: Imagen -->
+                    <div class="min-w-full flex-shrink-0 flex flex-col items-center">
+                      <div class="aspect-w-16 aspect-h-9 w-full">
+                        <img src="../portfolio_media/RustConsole/aquageddon3.jpg" alt="Gen9 Image" class="w-full h-full object-cover rounded">
+                      </div>
+                    </div>
+                    <!-- Slide 4: Video 1 -->
+                    <div class="min-w-full flex-shrink-0 flex flex-col items-center">
+                      <div class="aspect-w-16 aspect-h-9 w-full">
+                        <iframe
+                          src="https://www.youtube.com/embed/TRTv9GcN10I"
+                          title="Trailer Gen 9 video"
+                          frameborder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowfullscreen
+                          class="w-full h-full rounded"
+                        ></iframe>
+                      </div>
+                    </div>
+                </div>
+              </div>
+              <!-- Controls -->
+              <div class="absolute inset-0 flex items-center justify-between px-2 pointer-events-none">
+                  <button type="button" class="carousel-prev pointer-events-auto bg-white bg-opacity-80 rounded-full p-2 shadow hover:bg-opacity-100 transition">
+                    <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                    </svg>
+                  </button>
+                  <button type="button" class="carousel-next pointer-events-auto bg-white bg-opacity-80 rounded-full p-2 shadow hover:bg-opacity-100 transition">
+                    <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="mt-12 mb-4">Underground Assault</h3>
+        <div class="grid-style lg:grid-cols-2">
+
+          <!-- Carrousel -->
+          <div class="flex flex-col items-center justify-center">
+            <!-- Carousel container -->
+            <div class="relative w-full max-w-xl mx-auto">
+              <!-- Slides -->
+              <div class="overflow-hidden rounded shadow-md">
+                <div class="flex transition-transform duration-500" style="transform: translateX(var(--carousel-offset, 0%));" data-carousel id="carousel-track-Underground-Assault">
+                    <!-- Slide 1: Imagen -->
+                    <div class="min-w-full flex-shrink-0 flex flex-col items-center">
+                      <div class="aspect-w-16 aspect-h-9 w-full">
+                        <img src="../portfolio_media/RustConsole/undergroundassault.jpg" alt="Gen9 Image" class="w-full h-full object-cover rounded">
+                      </div>
+                    </div>
+                    <!-- Slide 2: Imagen -->
+                    <div class="min-w-full flex-shrink-0 flex flex-col items-center">
+                      <div class="aspect-w-16 aspect-h-9 w-full">
+                        <img src="../portfolio_media/RustConsole/undergroundassault2.jpg" alt="Gen9 Image" class="w-full h-full object-cover rounded">
+                      </div>
+                    </div>
+                    <!-- Slide 3: Imagen -->
+                    <div class="min-w-full flex-shrink-0 flex flex-col items-center">
+                      <div class="aspect-w-16 aspect-h-9 w-full">
+                        <img src="../portfolio_media/RustConsole/undergroundassault3.jpg" alt="Gen9 Image" class="w-full h-full object-cover rounded">
+                      </div>
+                    </div>
+                    <!-- Slide 4: Video 1 -->
+                    <div class="min-w-full flex-shrink-0 flex flex-col items-center">
+                      <div class="aspect-w-16 aspect-h-9 w-full">
+                        <iframe
+                          src="https://www.youtube.com/embed/K30ane9lCn4"
+                          title="Trailer Gen 9 Preorder video"
+                          frameborder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowfullscreen
+                          class="w-full h-full rounded"
+                        ></iframe>
+                      </div>
+                    </div>
+                </div>
+              </div>
+              <!-- Controls -->
+              <div class="absolute inset-0 flex items-center justify-between px-2 pointer-events-none">
+                  <button type="button" class="carousel-prev pointer-events-auto bg-white bg-opacity-80 rounded-full p-2 shadow hover:bg-opacity-100 transition">
+                    <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                    </svg>
+                  </button>
+                  <button type="button" class="carousel-next pointer-events-auto bg-white bg-opacity-80 rounded-full p-2 shadow hover:bg-opacity-100 transition">
+                    <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Description and Bullets -->
+          <div class="column-style">
+            <p class="description-paragraph-style">
+              <strong>Underground Assault</strong> was an excellent opportunity to work 
+              on combat design, as it was the first time I had been requested to 
+              introduce, balance, and modify items related to it. Additionally, since 
+              players enjoy showcasing their skins, I had the opportunity to design a 
+              feature that allows players to reskin their items with a spray can. This 
+              later pushed the introduction of the weapons inspection feature.
+            </p>
+            <p class="description-paragraph-style">
+              Here I leave a link to the 
+              <a href="https://rust.double11.com/news/dev-blog-25-underground-assault" target="_blank" class="text-blue-600 underline hover:text-blue-800">DEV BLOG #25</a>
+              , which were used to inform the players.
+            </p>
+            <p class="description-paragraph-style">
+              Below I add some of the things I worked on for this update:
+            </p>
+            <ul class="description-paragraph-list">
+              <li>Documentation and balancing of the Prototype 17 (Burst Fire Module introduction).</li>
+              <li>Documentation and balancing of the HMLMG.</li>
+              <li>Documentation and balancing of the M4 Shotgun.</li>
+              <li>Documentation and balancing of the Molotov.</li>
+              <li>Documentation and balancing of the Flashbang.</li>
+              <li>Documentation and balancing of the Nightvision.</li>
+              <li>Improvement to the module management UI in the inventory.</li>
+              <li>Design the feature that enableds the players to reskin with the spray can.</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 class="mt-12 mb-4">Horsepocalypse</h3>
+        <div class="grid-style lg:grid-cols-2">
+
+          <!-- Description and Bullets -->
+          <div class="column-style">
+            <p class="description-paragraph-style">
+              <strong>Horsepocalypse</strong> was the first thoroughly hands-on 
+              Development in this project. In this, I introduced the ridable horses, 
+              which pushed me to find a way to provide control to the players of this new 
+              vehicle. This particular change facilitated the standardization of vehicle 
+              controllers, thereby simplifying their understanding. Additionally, I 
+              re-designed the UI of the horse's inventory and its item mechanics. Horse 
+              acquisition was designed from scratch, taking into account the interactions 
+              involved. We innovated from PCs by incorporating two bars that provided the 
+              state of the horses (PC introduced later down the road). We improved players' 
+              mission menus, which opened the door for a future tool to enable community 
+              servers to create their missions.
+            </p>
+            <p class="description-paragraph-style">
+              Here I leave a link to the 
+              <a href="https://rust.double11.com/news/dev-blog-20-horsepocalypse" target="_blank" class="text-blue-600 underline hover:text-blue-800">DEV BLOG #20</a>.
+              , which were used to inform the players.
+            </p>
+            <p class="description-paragraph-style">
+              Below I add some of the things I worked on for this update:
+            </p>
+            <ul class="description-paragraph-list">
+              <li>Full Design of horses' interactions, controls, and UI's.</li>
+              <li>Design and established the standard for vehicle controls.</li>
+              <li>Documentation of how horses provided of a new resource... dung💩.</li>
+              <li>Documentation and balancing horses' inventory items.</li>
+              <li>Improvement of mission UI.</li>
+            </ul>
+          </div>
+
+          <!-- Carrousel -->
+          <div class="flex flex-col items-center justify-center">
+            <!-- Carousel container -->
+            <div class="relative w-full max-w-xl mx-auto">
+              <!-- Slides -->
+              <div class="overflow-hidden rounded shadow-md">
+                <div class="flex transition-transform duration-500" style="transform: translateX(var(--carousel-offset, 0%));" data-carousel id="carousel-track-Horsepocalypse">
+                    <!-- Slide 1: Imagen -->
+                    <div class="min-w-full flex-shrink-0 flex flex-col items-center">
+                      <div class="aspect-w-16 aspect-h-9 w-full">
+                        <img src="../portfolio_media/RustConsole/horspocalypse1.jpg" alt="Gen9 Image" class="w-full h-full object-cover rounded">
+                      </div>
+                    </div>
+                    <!-- Slide 2: Imagen -->
+                    <div class="min-w-full flex-shrink-0 flex flex-col items-center">
+                      <div class="aspect-w-16 aspect-h-9 w-full">
+                        <img src="../portfolio_media/RustConsole/horspocalypse2.jpg" alt="Gen9 Image" class="w-full h-full object-cover rounded">
+                      </div>
+                    </div>
+                    <!-- Slide 3: Imagen -->
+                    <div class="min-w-full flex-shrink-0 flex flex-col items-center">
+                      <div class="aspect-w-16 aspect-h-9 w-full">
+                        <img src="../portfolio_media/RustConsole/horspocalypse3.jpg" alt="Gen9 Image" class="w-full h-full object-cover rounded">
+                      </div>
+                    </div>
+                    <!-- Slide 3: Video 2 -->
+                    <div class="min-w-full flex-shrink-0 flex flex-col items-center">
+                      <div class="aspect-w-16 aspect-h-9 w-full">
+                        <iframe
+                          src="https://www.youtube.com/embed/G_XZed0vIjo"
+                          title="Trailer Gen 9 Preorder video"
+                          frameborder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowfullscreen
+                          class="w-full h-full rounded"
+                        ></iframe>
+                      </div>
+                    </div>
+                </div>
+              </div>
+              <!-- Controls -->
+              <div class="absolute inset-0 flex items-center justify-between px-2 pointer-events-none">
+                  <button type="button" class="carousel-prev pointer-events-auto bg-white bg-opacity-80 rounded-full p-2 shadow hover:bg-opacity-100 transition">
+                    <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                    </svg>
+                  </button>
+                  <button type="button" class="carousel-next pointer-events-auto bg-white bg-opacity-80 rounded-full p-2 shadow hover:bg-opacity-100 transition">
+                    <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="mt-12 mb-4">Cultivator</h3>
+        <div class="grid-style lg:grid-cols-2">
+
+          <!-- Carrousel -->
+          <div class="flex flex-col items-center justify-center">
+            <!-- Carousel container -->
+            <div class="relative w-full max-w-xl mx-auto">
+              <!-- Slides -->
+              <div class="overflow-hidden rounded shadow-md">
+                <div class="flex transition-transform duration-500" style="transform: translateX(var(--carousel-offset, 0%));" data-carousel id="carousel-track-Cultivator">
+                    <!-- Slide 1: Imagen -->
+                    <div class="min-w-full flex-shrink-0 flex flex-col items-center">
+                      <div class="aspect-w-16 aspect-h-9 w-full">
+                        <img src="../portfolio_media/RustConsole/cultivator1.jpg" alt="Gen9 Image" class="w-full h-full object-cover rounded">
+                      </div>
+                    </div>
+                    <!-- Slide 2: Imagen -->
+                    <div class="min-w-full flex-shrink-0 flex flex-col items-center">
+                      <div class="aspect-w-16 aspect-h-9 w-full">
+                        <img src="../portfolio_media/RustConsole/cultivator2.jpg" alt="Gen9 Image" class="w-full h-full object-cover rounded">
+                      </div>
+                    </div>
+                    <!-- Slide 3: Imagen -->
+                    <div class="min-w-full flex-shrink-0 flex flex-col items-center">
+                      <div class="aspect-w-16 aspect-h-9 w-full">
+                        <img src="../portfolio_media/RustConsole/cultivator3.jpg" alt="Gen9 Image" class="w-full h-full object-cover rounded">
+                      </div>
+                    </div>
+                    <!-- Slide 4: Video 2 -->
+                    <div class="min-w-full flex-shrink-0 flex flex-col items-center">
+                      <div class="aspect-w-16 aspect-h-9 w-full">
+                        <iframe
+                          src="https://www.youtube.com/embed/NKI4P5JqMXY"
+                          title="Trailer Gen 9 Preorder video"
+                          frameborder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowfullscreen
+                          class="w-full h-full rounded"
+                        ></iframe>
+                      </div>
+                    </div>
+                </div>
+              </div>
+              <!-- Controls -->
+              <div class="absolute inset-0 flex items-center justify-between px-2 pointer-events-none">
+                  <button type="button" class="carousel-prev pointer-events-auto bg-white bg-opacity-80 rounded-full p-2 shadow hover:bg-opacity-100 transition">
+                    <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                    </svg>
+                  </button>
+                  <button type="button" class="carousel-next pointer-events-auto bg-white bg-opacity-80 rounded-full p-2 shadow hover:bg-opacity-100 transition">
+                    <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Description and Bullets -->
+          <div class="column-style">
+            <p class="description-paragraph-style">
+              With <strong>Cultivator</strong>, I was given my first opportunity to work in UI and game 
+              communication with the player. Crops were a feature that players didn't 
+              exploit much on PC, so I tried to make the UI more communicative to help 
+              players understand the consequences of their actions. We introduced also 
+              the Mixing Table enable players to craft boosting teas. We introduced the 
+              fluid system that allows players to water their crops.
+            </p>
+            <p class="description-paragraph-style">
+              Here I leave a link to the 
+              <a href="https://rust.double11.com/news/dev-blog-17-c" target="_blank" class="text-blue-600 underline hover:text-blue-800">DEV BLOG #17</a>.
+              , which were used to inform the players.
+            </p>
+            <p class="description-paragraph-style">
+              Below I add some of the things I worked on for this update:
+            </p>
+            <ul class="description-paragraph-list">
+              <li>Full UI redesign of the crops UI. Now, players have better tools to predict a plant's future genes.</li>
+              <li>Introduction and design improvement of the fluid system. We added additional UI to explain fluid pressure.</li>
+              <li>Adapted controls for the mixing table, making it possible to use properly on the console.</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 class="mt-12 mb-4">Power Surge</h3>
+        <div class="grid-style lg:grid-cols-2">
+
+          <!-- Description and Bullets -->
+          <div class="column-style">
+            <p class="description-paragraph-style">
+              <strong>Power Surge</strong> was my introduction to Rust Console Edition. 
+              Throughout its development, I primarily focused on documentation and some 
+              UI improvements. On the documentation side, I marked a pivot on how things 
+              were documented in the project. I introduced Notion as a documentation Wiki 
+              (it was being used by other departments but not by Design), establishing 
+              the new standard for the project.
+            </p>
+            <p class="description-paragraph-style">
+              Here I leave a link to the 
+              <a href="https://rust.double11.com/news/dev-blog-14-power-surge" target="_blank" class="text-blue-600 underline hover:text-blue-800">DEV BLOG #14</a>.
+              , which were used to inform the players.
+            </p>
+            <p class="description-paragraph-style">
+              Below I add some of the things I worked on for this update:
+            </p>
+            <ul class="description-paragraph-list">
+              <li>Improvement in UI and accessibility aspects of the new system.</li>
+              <li>Adjustment of all the new items from the Electric System for the console.</li>
+              <li>Reintegration and unification of all the original features to one standard balance.</li>
+            </ul>
+          </div>
+
+          <!-- Carrousel -->
+          <div class="flex flex-col items-center justify-center">
+            <!-- Carousel container -->
+            <div class="relative w-full max-w-xl mx-auto">
+              <!-- Slides -->
+              <div class="overflow-hidden rounded shadow-md">
+                <div class="flex transition-transform duration-500" style="transform: translateX(var(--carousel-offset, 0%));" data-carousel id="carousel-track-Powersurge">
+                    <!-- Slide 1: Imagen -->
+                    <div class="min-w-full flex-shrink-0 flex flex-col items-center">
+                      <div class="aspect-w-16 aspect-h-9 w-full">
+                        <img src="../portfolio_media/RustConsole/powersurge.jpg" alt="Gen9 Image" class="w-full h-full object-cover rounded">
+                      </div>
+                    </div>
+                    <!-- Slide 2: Imagen -->
+                    <div class="min-w-full flex-shrink-0 flex flex-col items-center">
+                      <div class="aspect-w-16 aspect-h-9 w-full">
+                        <img src="../portfolio_media/RustConsole/powersurge2.jpg" alt="Gen9 Image" class="w-full h-full object-cover rounded">
+                      </div>
+                    </div>
+                    <!-- Slide 2: Imagen -->
+                    <div class="min-w-full flex-shrink-0 flex flex-col items-center">
+                      <div class="aspect-w-16 aspect-h-9 w-full">
+                        <img src="../portfolio_media/RustConsole/powersurge3.jpg" alt="Gen9 Image" class="w-full h-full object-cover rounded">
+                      </div>
+                    </div>
+                    <!-- Slide 3: Video 2 -->
+                    <div class="min-w-full flex-shrink-0 flex flex-col items-center">
+                      <div class="aspect-w-16 aspect-h-9 w-full">
+                        <iframe
+                          src="https://www.youtube.com/embed/4cKpBI59mZQ"
+                          title="Trailer Gen 9 Preorder video"
+                          frameborder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowfullscreen
+                          class="w-full h-full rounded"
+                        ></iframe>
+                      </div>
+                    </div>
+                </div>
+              </div>
+              <!-- Controls -->
+              <div class="absolute inset-0 flex items-center justify-between px-2 pointer-events-none">
+                <button type="button" class="carousel-prev pointer-events-auto bg-white bg-opacity-80 rounded-full p-2 shadow hover:bg-opacity-100 transition">
+                  <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                  </svg>
+                </button>
+                <button type="button" class="carousel-next pointer-events-auto bg-white bg-opacity-80 rounded-full p-2 shadow hover:bg-opacity-100 transition">
+                  <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- Carrousel Code -->
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          document.querySelectorAll('[data-carousel]').forEach(function(carouselTrack) {
+            let current = 0;
+            const slides = carouselTrack.children.length;
+            const container = carouselTrack.closest('.relative');
+
+            function updateCarousel() {
+              carouselTrack.style.setProperty('--carousel-offset', `${-100 * current}%`);
+            }
+            // Botones dentro de este carrusel
+            const prevBtn = container.querySelector('.carousel-prev');
+            const nextBtn = container.querySelector('.carousel-next');
+            if (prevBtn) prevBtn.addEventListener('click', function() {
+              current = (current - 1 + slides) % slides;
+              updateCarousel();
+            });
+            if (nextBtn) nextBtn.addEventListener('click', function() {
+              current = (current + 1) % slides;
+              updateCarousel();
+            });
+            updateCarousel();
+          });
+        });
+      </script>
+    </main>
+
+    <!--------------------------------- Floating Button -------------------------------->
+    <!-- Back to Portfolio Button -->
+    <div class="fixed bottom-14 left-1/2 -translate-x-1/2 flex flex-col items-center space-y-3 z-50 md:left-8 md:translate-x-0">
+      <a href="../index.html#portfolio" target="_self" class="bg-white text-black px-4 py-2 rounded-full shadow hover:bg-gray-200 transition flex items-center space-x-2">
+        <svg class="button-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+        </svg>
+        <span class="text-xs font-bold">Back to Portfolio</span>
+      </a>
+    </div>
+    <!------------------------------------- Footer ------------------------------------->
+    <footer class="text-center py-4 bg-gray-300 text-sm mt-auto">
+      &copy; 2025 Gurbo
+    </footer>
+  </body>
+</html>
