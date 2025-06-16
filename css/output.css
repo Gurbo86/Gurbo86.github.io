@@ -1090,6 +1090,10 @@ html {
   height: 14rem;
 }
 
+.h-\[25rem\] {
+  height: 25rem;
+}
+
 .h-auto {
   height: auto;
 }
@@ -1469,6 +1473,11 @@ html {
   background-color: rgb(103 232 249 / var(--tw-bg-opacity, 1));
 }
 
+.bg-cyan-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(34 211 238 / var(--tw-bg-opacity, 1));
+}
+
 .bg-gray-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity, 1));
@@ -1529,6 +1538,21 @@ html {
   background-color: rgb(77 124 15 / var(--tw-bg-opacity, 1));
 }
 
+.bg-orange-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(251 146 60 / var(--tw-bg-opacity, 1));
+}
+
+.bg-red-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(248 113 113 / var(--tw-bg-opacity, 1));
+}
+
+.bg-red-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(239 68 68 / var(--tw-bg-opacity, 1));
+}
+
 .bg-transparent {
   background-color: transparent;
 }
@@ -1556,6 +1580,12 @@ html {
 
 .bg-gradient-to-r {
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
+}
+
+.from-black {
+  --tw-gradient-from: #000 var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(0 0 0 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
 .from-blue-400 {
@@ -1610,6 +1640,10 @@ html {
 
 .to-purple-950 {
   --tw-gradient-to: #3b0764 var(--tw-gradient-to-position);
+}
+
+.to-red-600 {
+  --tw-gradient-to: #dc2626 var(--tw-gradient-to-position);
 }
 
 .bg-contain {
@@ -2180,6 +2214,10 @@ html {
 
   .md\:h-80 {
     height: 20rem;
+  }
+
+  .md\:h-\[25rem\] {
+    height: 25rem;
   }
 
   .md\:max-h-full {
