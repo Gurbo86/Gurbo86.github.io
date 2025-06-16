@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco Regional</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link href="../css/output.css" rel="stylesheet">
+    <style>
+      .hero-section {
+        height: 70vh;
+        position: relative;
+        z-index: 0;
+      }
+
+      .main-overlap {
+        position: relative;
+        z-index: 10;
+        border-top-left-radius: 2rem;
+        border-top-right-radius: 2rem;
+        padding-top: 2rem;
+        padding-bottom: 5rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+
+      .grid-style {
+        display: grid;                   /* grid */
+        grid-template-columns: 1;      /* grid-cols-1 */
+        gap: 1.5rem;                     /* gap-6 */
+        align-items: start;              /* items-start */
+      }
+
+      .column-style {
+        display: flex;            /* flex */
+        flex-direction: column;   /* flex-col */
+        justify-content: center;  /* justify-center */
+      }
+
+      .description-paragraph-style {
+        font-size: 0.875rem      /* 14px */;
+        text-align: left;        /* text-left */
+        line-height: 1.25rem;    /* text-sm (line-height) */
+        margin-bottom: 0.5rem;   /* mb-2 */
+      }
+
+      .description-paragraph-list {
+        list-style-type: disc;         /* list-disc */
+        list-style-position: inside;   /* list-inside */
+        padding-left: 0.5rem;          /* pl-2 */
+        text-align: left;              /* text-left */
+        font-size: 0.875rem;           /* text-sm */
+      }
+      
+      h2 {
+        color: #e7e7e7;
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 3rem;
+        font-weight: 400;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        line-height: 1.1;
+      }
+
+      h3 {
+        color: #e7e7e7;
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 2rem;
+        font-weight: 200;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        line-height: 1.1;
+      }
+
+      @media (min-width: 1024px) {
+        h2 {
+          font-size: 3.75rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="bg-blue-400 text-gray-900 flex flex-col min-h-screen">
+
+    <!-- Header -->
+    <header class="site-header">
+      <nav class="flex items-center justify-between px-4 py-4 max-w-full mx-auto whitespace-nowrap">
+
+        <!-- Logo -->
+        <h1 class="site-title">Gurbo's Game Development</h1>
+        
+        <!-- Botón de retorno (visible solo en mobile) -->
+        <a href="../index.html" class="button-base-config">
+          <span class="font-bold">Home</span>
+        </a>
+
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section flex flex-col items-center justify-center text-white text-center bg-black pt-24 overflow-hidden">
+      <!-- Background Image -->
+      <div class="absolute inset-0 -z-10">
+        <div 
+          class="h-full w-full bg-cover bg-no-repeat bg-center filter blur-sm opacity-70" 
+          style="background-image: url('../portfolio_media/BancoRegional/banner.png');">
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div class="relative z-10">
+        <!-- Logo -->
+        <img src="../portfolio_media/BancoRegional/bancoregionallogo.png" alt="Logo Industrial" class="mx-auto h-80 mb-4">
+        <!-- Tagline -->
+        <p class="text-xl mt-4">Brazilian version of Monopoly.</p>
+        <!-- Links to Stores -->
+        <div class="flex justify-center mt-6 space-x-4">
+          <a href="https://www.jogosdesempre.com/area-vip" target="_blank" class="bg-white bg-opacity-100 rounded-full p-2 hover:bg-opacity-80">
+            <img src="../img/web.svg" alt="Jogos de Sempre Site" class="h-8">
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=com.widowgames.bancoimobiliario" target="_blank" class="bg-white bg-opacity-100 rounded-full p-2 hover:bg-opacity-80">
+            <img src="../img/googlePlay.svg" alt="Play Store" class="h-8">
+          </a>
+          <a href="https://apps.apple.com/ar/app/banco-regional-imobili%C3%A1rio/id1188452394" target="_blank" class="bg-white bg-opacity-100 rounded-full p-2 hover:bg-opacity-80">
+            <img src="../img/appStore.svg" alt="App Store" class="h-8">
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Separador Hero Section / Main Section - SVG Transition -->
+    <div class="elementor-shape elementor-shape-bottom" data-negative="false">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 5.8" preserveAspectRatio="none">
+        <!--<path class="elementor-shape-fill" d="M5.4.4l5.4 5.3L16.5.4l5.4 5.3L27.5.4 33 5.7 38.6.4l5.5 5.4h.1L49.9.4l5.4 5.3L60.9.4l5.5 5.3L72 .4l5.5 5.3L83.1.4l5.4 5.3L94.1.4l5.5 5.4h.2l5.6-5.4 5.5 5.3 5.6-5.3 5.4 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.5 5.4h.2l5.6-5.4 5.4 5.3L161 .4l5.4 5.3L172 .4l5.5 5.3 5.6-5.3 5.4 5.3 5.7-5.3 5.4 5.4h.2l5.6-5.4 5.5 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.4 5.3 5.6-5.3 5.5 5.4h.2l5.6-5.4 5.5 5.3L261 .4l5.4 5.3L272 .4l5.5 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.5 5.4h.1l5.7-5.4 5.4 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.4 5.3 5.7-5.3 5.4 5.4h.2l5.6-5.4 5.5 5.3L361 .4l5.5 5.3 5.6-5.3 5.4 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.5 5.4h.1l5.7-5.4 5.4 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.5 5.4h.1l5.6-5.4 5.5 5.3L461 .4l5.5 5.3 5.6-5.3 5.4 5.3 5.7-5.3 5.4 5.3 5.6-5.3 5.5 5.4h.2l5.6-5.4 5.5 5.3 5.6-5.3 5.4 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.5 5.4h.1L550 .4l5.4 5.3L561 .4l5.5 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.4 5.3 5.6-5.3 5.5 5.4h.2l5.6-5.4 5.5 5.3 5.6-5.3 5.4 5.3 5.7-5.3 5.4 5.3 5.6-5.3 5.5 5.4h.2L650 .4l5.5 5.3 5.6-5.3 5.4 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.4 5.4h.2l5.6-5.4 5.5 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.4 5.3 5.6-5.3 5.5 5.4h.2L750 .4l5.5 5.3 5.6-5.3 5.4 5.3 5.7-5.3 5.4 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.5 5.4h.1l5.7-5.4 5.4 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.4 5.4h.2L850 .4l5.5 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.4 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.5 5.4h.2l5.6-5.4 5.4 5.3 5.7-5.3 5.4 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.5 5.4h.1l5.7-5.4 5.4 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.4 5.3 5.6-5.3 5.5 5.4h.2l5.6-5.4 5.5 5.3 5.6-5.3 5.4 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.5 5.4h.2l5.6-5.4 5.4 5.3 5.7-5.3 5.4 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.4 5.4h.2l5.6-5.4 5.5 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.4 5.3 5.6-5.3 5.5 5.4h.2l5.6-5.4 5.5 5.3 5.6-5.3 5.4 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.5 5.4h.1l5.7-5.4 5.4 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.4 5.4h.2l5.6-5.4 5.5 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.4 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.5 5.4h.2l5.6-5.4 5.4 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.5 5.4h.1l5.7-5.4 5.4 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.4 5.3 5.6-5.3 5.5 5.4h.2l5.6-5.4 5.5 5.3 5.6-5.3 5.4 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.5 5.4h.2l5.6-5.4 5.4 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.4 5.3 5.7-5.3 5.4 5.4h.2l5.6-5.4 5.5 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.4 5.3 5.6-5.3 5.5 5.4h.2l5.6-5.4 5.5 5.3 5.6-5.3 5.4 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.5 5.4h.1l5.6-5.4 5.5 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.4 5.3 5.7-5.3 5.4 5.4h.2l5.6-5.4 5.5 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.4 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.5 5.4h.1l5.7-5.4 5.4 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.5 5.4h.1l5.6-5.4 5.5 5.3 5.6-5.3 5.5 5.3 5.6-5.3 5.4 5.3 5.7-5.3 5.4 5.3 5.6-5.3 5.5 5.4V0H-.2v5.8z"></path>-->
+        <!-- Square Shaped Separator -->
+        <path d="M0 0h10v100H0zM20 0h10v100H20zM40 0h10v100H40zM60 0h10v100H60zM80 0h10v100H80zM100 0h10v100h-10zM120 0h10v100h-10zM140 0h10v100h-10zM160 0h10v100h-10zM180 0h10v100h-10zM200 0h10v100h-10zM220 0h10v100h-10zM240 0h10v100h-10zM260 0h10v100h-10zM280 0h10v100h-10zM300 0h10v100h-10zM320 0h10v100h-10zM340 0h10v100h-10zM360 0h10v100h-10zM380 0h10v100h-10zM400 0h10v100h-10zM420 0h10v100h-10zM440 0h10v100h-10zM460 0h10v100h-10zM480 0h10v100h-10zM500 0h10v100h-10zM520 0h10v100h-10zM540 0h10v100h-10zM560 0h10v100h-10zM580 0h10v100h-10zM600 0h10v100h-10zM620 0h10v100h-10zM640 0h10v100h-10zM660 0h10v100h-10zM680 0h10v100h-10zM700 0h10v100h-10zM720 0h10v100h-10zM740 0h10v100h-10zM760 0h10v100h-10zM780 0h10v100h-10zM800 0h10v100h-10zM820 0h10v100h-10zM840 0h10v100h-10zM860 0h10v100h-10zM880 0h10v100h-10zM900 0h10v100h-10zM920 0h10v100h-10zM940 0h10v100h-10zM960 0h10v100h-10zM980 0h10v100h-10zM1000 0h10v100h-10zM1020 0h10v100h-10zM1040 0h10v100h-10zM1060 0h10v100h-10zM1080 0h10v100h-10zM1100 0h10v100h-10zM1120 0h10v100h-10zM1140 0h10v100h-10zM1160 0h10v100h-10zM1180 0h10v100h-10zM1200 0h10v100h-10zM1220 0h10v100h-10zM1240 0h10v100h-10zM1260 0h10v100h-10zM1280 0h10v100h-10zM1300 0h10v100h-10zM1320 0h10v100h-10zM1340 0h10v100h-10zM1360 0h10v100h-10zM1380 0h10v100h-10zM1400 0h10v100h-10zM1420 0h10v100h-10zM1440 0h10v100h-10zM1460 0h10v100h-10zM1480 0h10v100h-10zM1500 0h10v100h-10zM1520 0h10v100h-10zM1540 0h10v100h-10zM1560 0h10v100h-10zM1580 0h10v100h-10zM1600 0h10v100h-10zM1620 0h10v100h-10zM1640 0h10v100h-10zM1660 0h10v100h-10zM1680 0h10v100h-10zM1700 0h10v100h-10zM1720 0h10v100h-10zM1740 0h10v100h-10zM1760 0h10v100h-10zM1780 0h10v100h-10zM1800 0h10v100h-10zM1820 0h10v100h-10zM1840 0h10v100h-10zM1860 0h10v100h-10zM1880 0h10v100h-10z"></path>
+      </svg>
+    </div>
+
+    <!-- Intro Main Section -->
+    <section class="relative z-20 mt-12 mb-8 px-4 max-w-[1100px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+
+      <!-- Columna central: Overview -->
+      <div class="column-style object-contain h-full">
+        <h2 class="mb-2">ABOUT BANCO REGIONAL IMOBLIÁRIO</h2>
+        <p class="text-base">
+          <strong>Banco Regional Imobiliáirio</strong> brings Brazil’s classic 
+          property-trading board game to mobile. Buy, sell and swap landmarks, 
+          build houses and hotels, collect rent and bankrupt rivals. Play 
+          lightning-fast matches online, offline or against a sharp AI, tweak 
+          rules to suit your table and track progress with samba-flavoured 
+          animations. Whether on the bus or at home, every roll can make you 
+          the next mogul.This game is conforms a bundle of games that belong to 
+          the "Jogos de Sempre" franchise, which includes other popular games 
+          like "War Strategy" or "A Vida e um Jogo".
+        </p>
+      </div>
+
+      <!-- Columna derecha: Features (opcional) -->
+      <div class="column-style object-contain h-full">
+        <h2 class="mb-2">FEATURES</h2>
+        <ul class="list-disc list-inside space-y-1">
+          <li>Multiplayer asyncronic gameplay.</li>
+          <li>Play with friends or AI.</li>
+          <li>Cloud saves and global rankings.</li>
+          <li>Cross-platform between iOS, Android and web.</li>
+          <li>The game is crafted for all the family.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Main content -->
+    <main class="main-overlap bg-blue-600 text-gray-900 px-4 padding-top py-12 max-w-[1100px] mx-auto space-y-12">
+      <section>
+        <div class="column-style object-contain h-full">
+          <h2 class="mb-2">Project Description</h2>
+          <p class="text-lg">
+            <strong>Banco Regional Imobiliário</strong> started as a side 
+            assignment alongside my core duties, and—like anyone in a startup—I 
+            had to wear several hats. My chief responsibility was to add a full 
+            monetization layer, integrating in-app purchases into a Unity game 
+            already live on Web, Android and iOS. I designed and implemented 
+            the purchase flow, integrated store validation and analytics, and 
+            refactored legacy code so the new economy slotted in seamlessly. I 
+            also shipped dozens of bug fixes and quality-of-life tweaks that 
+            boosted stability and player retention.
+          </p>
+        </div>
+      </section>
+
+      <section class="grid grid-cols-1 md:grid-cols-5 gap-8">
+
+        <!-- Columna izquierda: Contribuciones -->
+        <div class="md:col-span-3 flex flex-col items-begin">
+          <h2 class="mb-2">Project Contributions</h2>
+          <ul class="list-disc list-inside space-y-1 text-left">
+            <li>I worked with a codebase in C# and Unity Engine.</li>
+            <li>I worked with api rest , MongoDB and Redis.</li>
+            <li>I organized team pipelines and tasks through HackNPlan platform.</li>
+          </ul>
+        </div>
+
+        <!-- Columna derecha: Detalles + Tecnologías -->
+        <div class="md:col-span-2 flex flex-col gap-8">
+          <!-- Detalles del Proyecto -->
+          <div class="column-style object-contain h-full">
+            <h3 class="mb-2">Projects Details</h3>
+            <p><strong>Studio:</strong> Widow Games</p>
+            <p><strong>Platforms:</strong> Android, iOS, Web</p>
+          </div>
+
+          <!-- Tecnologías Utilizadas -->
+          <div class="column-style object-contain h-full">
+            <h3 class="mb-2">Tools Used</h3>
+            <ul class="list-disc list-inside space-y-1 grid grid-cols-2 gap-x-4">
+              <li class="flex items-center gap-2">
+                <img src="../img/unity.svg" alt="⦿" class="w-5 h-5">
+                Unity
+              </li>
+              <li class="flex items-center gap-2">
+                <img src="../img/cSharp.svg" alt="⦿" class="w-5 h-5">
+                C#
+              </li>
+              <li class="flex items-center gap-2">
+                <img src="../img/visualStudio.svg" alt="⦿" class="w-5 h-5">
+                Visual Studio
+              </li>
+              <li class="flex items-center gap-2">
+                <img src="../img/git.svg" alt="⦿" class="w-5 h-5">
+                GIT
+              </li>
+              <li class="flex items-center gap-2">
+                <img src="../img/mongodb.svg" alt="⦿" class="w-5 h-5">
+                MongoDB
+              </li>
+              <li class="flex items-center gap-2">
+                <img src="../img/redis.svg" alt="⦿" class="w-5 h-5">
+                Redis
+              </li>
+              <li class="flex items-center gap-2">
+                <img src="../img/hacknplan.svg" alt="⦿" class="w-5 h-5">
+                HackNPlan
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      
+    </main>
+
+    <!--------------------------------- Floating Button -------------------------------->
+    <!-- Back to Portfolio Button -->
+    <div class="fixed bottom-14 left-1/2 -translate-x-1/2 flex flex-col items-center space-y-3 z-50 md:left-8 md:translate-x-0">
+      <a href="../index.html#portfolio" target="_self" class="bg-white text-black px-4 py-2 rounded-full shadow hover:bg-gray-200 transition flex items-center space-x-2">
+        <svg class="button-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+        </svg>
+        <span class="text-xs font-bold">Back to Portfolio</span>
+      </a>
+    </div>
+    
+    <!--------------------------------- Image Overlay ---------------------------------->
+    <div id="imgOverlay" style="display:none; position:fixed; z-index:9999; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.85); justify-content:center; align-items:center;">
+      <img id="imgOverlayImg" src="" alt="Imagen ampliada" style="max-width:90vw; max-height:90vh; border-radius:12px; box-shadow:0 0 40px #000;">
+    </div>
+
+    <script>
+      // Al hacer clic en cualquier imagen de la galería
+      document.querySelectorAll('.popup-zoom-img').forEach(img => {
+        img.addEventListener('click', function() {
+          document.getElementById('imgOverlayImg').src = this.src;
+          document.getElementById('imgOverlay').style.display = 'flex';
+        });
+      });
+      // Al hacer clic en el overlay, se cierra
+      document.getElementById('imgOverlay').addEventListener('click', function() {
+        this.style.display = 'none';
+        document.getElementById('imgOverlayImg').src = '';
+      });
+    </script>
+
+    <!------------------------------------- Footer  ------------------------------------->
+    <footer class="text-center bg-[#1f2937] text-[#d1d5db] text-c py-4 text-sm mt-auto">
+      <p>&copy; Leonel Máximo Maguet 2025</p>
+      <p>All content and trademarks property of their respective owners.</p>
+    </footer>
+  </body>
+</html>
