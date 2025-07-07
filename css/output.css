@@ -1253,16 +1253,36 @@ html {
   max-width: 48rem;
 }
 
+.max-w-48 {
+  max-width: 12rem;
+}
+
 .max-w-4xl {
   max-width: 56rem;
+}
+
+.max-w-56 {
+  max-width: 14rem;
 }
 
 .max-w-6xl {
   max-width: 72rem;
 }
 
+.max-w-72 {
+  max-width: 18rem;
+}
+
 .max-w-7xl {
   max-width: 80rem;
+}
+
+.max-w-80 {
+  max-width: 20rem;
+}
+
+.max-w-96 {
+  max-width: 24rem;
 }
 
 .max-w-\[1100px\] {
@@ -1275,6 +1295,14 @@ html {
 
 .max-w-md {
   max-width: 28rem;
+}
+
+.max-w-screen-md {
+  max-width: 768px;
+}
+
+.max-w-screen-sm {
+  max-width: 640px;
 }
 
 .max-w-xl {
