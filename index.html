@@ -201,7 +201,9 @@
 
       <!-- Grilla de Proyectos -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        
+
+        <!--Aca van los proyectos que me hicieron sacar-->
+
         <!-- Proyecto - Geopoly -->
         <!-- Tag del Filtro -->
         <div class="portfolio-item fade-in" data-role="uxdesigner gamedesigner gameplayprogrammer uiprogrammer producer">
@@ -673,17 +675,84 @@
     </section>
 
     <!------------------------------------- Blog ------------------------------------->
-    <!--
+
     <section id="blog" class="min-h-screen py-20 px-6 bg-gray-900">
     <h2 class="text-3xl font-bold mb-8 text-center">Blog</h2>
-    <div class="max-w-3xl mx-auto">
-      <article class="mb-8">
-        <h3 class="text-2xl font-semibold">Título del artículo</h3>
-        <p class="text-sm">Pequeña introducción o resumen del post...</p>
-      </article>
+    <div class="mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Grilla de Posts Recientes -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+        
+        <!-- Blog Card -->
+        <div class="relative bg-gray-800 rounded-xl shadow-md overflow-hidden h-[14rem] sm:h-[24rem] md:h-80 flex generic-hover group md:items-end">
+            <!-- Imagen de fondo -->
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1751225750479-43ad27b94fa0?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"></div>
+            <!-- Overlay oscuro  -->
+            <div class="absolute inset-0 bg-black opacity-30"></div>
+
+            <!-- Contenido encima -->
+            <div class="relative z-10 h-full p-4 h-full flex flex-col">
+
+              <!-- Header -->
+              <div class="flex items-start justify-between gap-2">
+                <h3 class="text-2xl font-extrabold tracking-tight text-white drop-shadow-lg">
+                  Título del post
+                </h3>
+                
+                
+                <span class="shrink-0 bg-white/15 text-white text-xs font-medium px-2 py-1 rounded-full backdrop-blur-sm">
+                  Categoría
+                </span>
+              </div>
+
+              <!-- Cuerpo (ocupa el espacio medio) -->
+              <div class="mt-2 flex-1 relative overflow-hidden">
+                <!-- Si tenés el plugin line-clamp de Tailwind -->
+                <p class="text-sm text-white/90 leading-relaxed line-clamp-4 md:line-clamp-[8]">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ultrices erat a 
+                  mollis aliquam. Phasellus sem sem, aliquam et fermentum ut, venenatis et ipsum. 
+                  Maecenas congue lacus quis nisl vehicula bibendum. Vivamus id libero eu turpis 
+                  imperdiet mattis. Ut tempus dictum auctor. Cras eu efficitur nisl. In congue nisl 
+                  elementum justo iaculis, eget sollicitudin ex porttitor. Proin dapibus nibh 
+                  vulputate nunc semper aliquam. Morbi pretium dictum mauris nec pulvinar. Class 
+                  aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos 
+                  himenaeos. Morbi id bibendum augue. Aenean vitae neque aliquet, posuere nulla 
+                  bibendum, ultrices mi. Mauris varius convallis nibh, vel scelerisque felis 
+                  consectetur vitae. Vestibulum bibendum lacinia erat, vel ultrices tortor placerat 
+                  at. Cras dictum gravida lorem. In cursus erat nec quam egestas mattis. In eu arcu 
+                  orci. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut nisl vitae 
+                  eros molestie venenatis. Nunc feugiat imperdiet lectus, eget aliquam mi lobortis 
+                  ac. Etiam at sodales nunc. Praesent eget enim congue, sollicitudin tellus sit 
+                  amet, congue turpis. Fusce sit amet gravida magna, quis eleifend elit. Vivamus 
+                  ultrices dapibus eleifend. 
+                </p>
+              </div>
+
+              <!-- Footer --> <!--transition-colors-->>
+              <div class="mt-auto flex items-center justify-center">
+                <a href="#" class="
+                    rounded bg-blue-600 shadow
+                    hover:bg-blue-700 transition-colors duration-200 
+                    px-6 py-2 inline-flex items-center gap-2 
+                    text-white font-semibold ">
+                  <span>Read more</span>
+                  <!-- ícono opcional -->
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round"
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                  </svg>
+                </a>
+              </div>
+
+            </div>
+            
+        </div>
+        
+      </div>
+      
     </div>
     </section>
-    -->
+    
     <!----------------------------------- Contact ------------------------------------>
     <section id="contact" class="min-h-screen py-20 px-6 bg-black">
     <h2 class="text-3xl font-bold mb-8 text-center">Contact</h2>
