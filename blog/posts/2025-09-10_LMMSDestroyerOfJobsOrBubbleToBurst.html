@@ -1,0 +1,221 @@
+<article class="post-style" data-tags="tech,opinion">
+    <div class="post-header-style" style="display: flex; gap: 1rem; align-items: center;">
+        <!-- FECHA -->
+        <div style="
+            min-width: 70px;
+            min-height: 90px;
+            text-align: center;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        ">
+            <div class="day-font" style="
+                height: 35px; line-height: 35px;
+                background: #2cb3f1ff;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+            ">
+                10
+            </div>
+            <div class="month-font" style="
+                height: 25px; line-height: 25px;
+                background: #2cb3f1ff;
+            ">
+                SEP
+            </div>
+            <div class="year-font" style="
+                height: 30px; line-height: 30px;
+                background: #cc0000ff;
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+            ">
+                2025
+            </div>
+        </div>
+        <div style="flex: 1;">
+            <h1 id="post-title" style="margin: 0; font-weight: bold;">LMMs: Destroyer of Jobs or Bubble to Burst</h1>
+            <p style="margin: 0rem; line-height: 1.5rem;">By Leonel Maguet</p>
+            <div class="tag-line"></div>
+        </div>
+    </div>
+    
+    <!-- CONTENIDO -->
+    <div id="post-content" style="padding-top: 1rem; padding-bottom: 1rem; padding-left: 2rem; padding-right: 2rem;">
+        <img class="px-10" src="/blog/posts/images/2025-09-10-1.png" alt="Imagen post 1">
+        <p>
+            A lot has been said in the last few years about AI and how it will change the world. The main way the popular belief has been defined in recent years has been in terms of for and against. On the side of the for we have people that say that there&rsquo;s no escape and that a long list of jobs will be replaced in a period of time, and that is good for productivity. On the other side of the aisle, we have the people that is scared of the rise of AI and the impacts they say that it has in their industry, generally pushing for union action to make the government regulate them. And then there&rsquo;s the middle composed of mememakers, proper early users, and people that don&rsquo;t care at all.
+        </p>
+        <p>
+            For the last 3 or 4 months, I worked with LLMs to better understand their boundaries and how factual the voices going around about them are. I think that the best way to understand what&rsquo;s going on is by trying it yourself, getting into the mud, and doing things with it. Other experiences are important to understand, but the personal experience can help to see the biases and tastes of the opinions gathered.
+        </p>
+        <p>
+            So the first attempt to work with the LLMs came when a friend commented to me that it is possible to create your own webpage portfolio on GitHub. I previously had a webpage that was made in a web platform, but I thought that having my own platform, with my own conditions, would be nicer.
+        </p>
+        <p>
+            The second attempt was by creating assets for my board games and video games projects. The idea for the first was to make clearer placeholder art, to be able to present the prototype with a nicer aesthetic to the publishers. In the case of the second, by creating some placeholder art for the video game prototype I&rsquo;m working on.
+        </p>
+        <p>
+            Last but not least, I try to use them to work on large amounts of data. I tried to analyze and process an Excel file containing information on companies that were able to provide a Worker Visa Tier 2 in the UK. To give context, my time at the company I used to work ended, and I was trying to find a company that could cover my visa to stay in the UK (sad story, didn&rsquo;t find. Maybe another post.)
+        </p>
+        <p>
+            Additionally, all the other typical things that the LLMs would be used to, like searching, automating specific tasks, checking for basic advice, and looking for cheaper tickets for flights.
+        </p>
+        <p>
+            Before starting to work with LLMs, I did some research and took a free course that I found on the internet so that I could introduce myself to the basics of the technology. Between the concepts they explored, they cover how to prompt efficiently, the different models, and the basics of automation. I also had a chat with a friend who is already working on creating models for other industries. These things are basics, and considering how new things comes out every day (some of them interesting, others not so), I think that to be up to date, one will need to follow the &ldquo;new thing&rdquo; which can be a little bit overwhelming.
+        </p>
+        <p>
+            Having all this in mind, let&rsquo;s get into what I was able to check.
+        </p>
+        <h1>
+            LLMs for coding
+        </h1>
+        <p>
+            When speaking about AIs for coding, one of the first things we must speak about is Vibe Coding. The first definition that we find (thanks to the AI view of Google) on this is: 
+        </p>
+        <blockquote>
+            Vibe coding is a software development approach that utilizes large language models (LLMs) and other AI tools to generate code based on natural language descriptions, effectively letting AI handle the bulk of the coding work. It emphasizes a hands-off approach where developers focus on describing the desired functionality and desired outcome rather than meticulously crafting every line of code.
+        </blockquote>
+        <p>
+            Basically, Vibe Coding is letting the LLM code for you based on descriptions and examples. So, the first thing I did was a GPT to specialize the request I may have for the development. After that, I looked for portfolio webpages and provided them to the GPT, explaining what things I would like for my own page. Based on this information, the LLM first provided me with some suggestions to make the development environment, and then offered some HTML code to be added in the editor.
+        </p>
+        <p>
+            To all this, I have basic experience of HTML, but I have been a coder for the last 12 years, so I use this chance to understand more about what I was doing. At the beginning, the vibe coding process felt like magic, as most of the time, the results looked exactly as requested. However, as time passed and I asked for minor modifications, the issues started popping up. Also, the more I adapted the code, the more I realized some parts of it were repeating, others were not optimized, and there was no reusability of code that the LLMs suggested.
+        </p>
+        <p>
+            Two things that I strongly learned through my time in uni are:
+        </p>
+        <ul>
+            <li>
+                It is more important to learn the paradigm beyond the coding language.
+            </li>
+            <li>
+                Understanding patterns and systems over coding.
+            </li>
+        </ul>
+        <p>
+            One thing I can tell from this experience is that LLMs facilitate the process of making things, by making them fast, but when optimizing and reusing code, LLMs run short and require supervision. I, at the time I&rsquo;m writing this, because of how fast this field is, think that LLMs on coding are more like an auxiliary system that can speed up processes of development, but need a conscious programmer to fix, improve, and architect the code provided.
+        </p>
+        <p>
+            When encountering a bug, I&#39;ve noticed that LLMs often provide a set of solutions. If those options don&#39;t work, they&#39;ll likely insist on the same solutions. This, in some sense, shows that even though the tool is powerful, it is not intelligent by itself. The solution to this problem generally involves going back to the previous way of doing things (debugging, modifying, and researching) or, if you feel lucky, try another LLM.
+        </p>
+        <p>
+            Because of all that, I sincerely don&rsquo;t think that we will be replacing programmers in the short term. However, it is possible that the hiring of junior positions will be affected as the tool significantly increases the productivity of mid and senior levels. The implications of this can be detrimental not only for newcomers to the industry but also for companies in the long term, but let&rsquo;s leave that for a future post.
+        </p>
+        <h1>
+            LLMs for Art
+        </h1>
+        <p>
+            In the case of art, LLMs have been strongly opposed and discussed by the people that are specialists in this industry. Lot&rsquo;s has been said about this but, How realistic is it to make assets fully in LLMs?
+        </p>
+        <p>
+            In my case, I must say that I didn&rsquo;t make an extensive research on this just because of time constraints, but my experience is separated in 2 categories:
+        </p>
+        <ul>
+            <li>
+                Making art based on previous art
+            </li>
+            <li>
+                Making art from a prompt only
+            </li>
+        </ul>
+        <p>
+            For the first case, what I was trying to do was to refresh all the placeholder art that I was using for a board game prototype to make it a little bit more &ldquo;legal&rdquo; and prettier, as the original images were from the internet and cropped for the purpose required.
+        </p>
+        <p>
+            The process was to upload all the images so the LLM could make himself an idea of how the art was being used, and after that, by requesting through prompts the creation of the new art.
+        </p>
+        <p>
+            The first problem I found is that the machine does not immediately understand that you are asking it not to create new art, but to improve the image you provided. The first attempt by the LLM was to make the art from scratch, which was not bad; however, the reason we provided the initial images was that we wanted something similar. This was resolved by being more specific in the prompt.
+        </p>
+        <p>
+            The main problem came when through the process of remaking them, the LMM started making menial mistakes. Maybe the image in general was satisfactory for the purpose sought, but there were some things that I might want removed or changed. If I requested the LMM to make these modifications, the next iteration will include new details that were not requested, and in some way, these changes alter the art style, getting out of the style that was being looked for.
+        </p>
+        <p>
+            And to provide further insight, the style resembled black and white, stylized comic book drawings with minimal details (such as no need for shadows).
+        </p>
+        <p>
+            Through the whole process, it was impossible to obtain a close drawing to the one expected or needed, as it was hard to keep the style consistent or to make the minor modifications without the style being affected.
+        </p>
+        <p>
+            For the second case, I tried several times to create a spritesheet for some prototypes I have been working on, to have some pretty placeholder art to make it more pleasant, or to have an idea of how to communicate to the player some mechanics.
+        </p>
+        <p>
+            To do this, I was super specific with the style, perspective, size, and references. I took the time to iterate (again) on the results obtained to refine the images to get the one that best fits the requirements.
+        </p>
+        <p>
+            For this case, the issues found were many, as the search for the image style can be pretty extensive, sometimes roaming through images that don&rsquo;t match at all what was requested. When trying to obtain specific sizes and resolutions, the process can become a nightmare. The image generator, for some reason, has a hard time interpreting resolutions, creating images that do not fit the requirements. Beyond that, for large-sized images, the LLM will inform constraints that make it harder to get something that can be easily worked on later.
+        </p>
+        <p>
+            To get something decent with this process (and by decent, I mean something that matches the requirement we are looking for), one needs to spend probably 2 or 3 hours trying prompts until there&rsquo;s something that can be easily cleaned through image editing software to be later used. Sincerely, after all, this is much easier to find on the internet, edit, and use at this point.
+        </p>
+        <p>
+            One point I want to make is that all the art generated was mainly used for placeholder art, and none of it was intended for commercial use. I want to clarify it because the artists are the ones who are more activist against AI art, and I want to avoid misinterpretations about what has been done.
+        </p>
+        <h1>
+            LLMs for Data Processing
+        </h1>
+        <p>
+            As commented at the beginning, I used LLMs to process an Excel file that I obtained from the official UK government site. The idea was to identify the companies that provided Tier 2 Worker Visas and focus the application to such companies.
+        </p>
+        <p>
+            My first attempt was to throw the Excel file into the LLM and request that it filter directly through companies dedicated to video game development. The LLM achieved more or less the task, but it required lots of iteration and assistance on my side, as it took me several prompts to finally get the LLM to make me a filtered file that contained the information requested. One of the most annoying issues I stumbled with was a limitation in the number of rows of data the LLM was able to provide, and it took several prompts to go over it.
+        </p>
+        <p>
+            The final file was kind of a mix. The companies in the list were a mix of video game, software development, and web design companies. It was really slow to make the LLM process and leave a list of the first 2, as each iteration of requests was taking between 10 and 15 minutes, and the results were not so accurate. In the end, I opted to do it manually.
+        </p>
+        <p>
+            Another request I made was related to the location of the companies. This information in the original Excel was not uniform or incomplete (I discarded the fact that it might be even wrong for the sake of time). I requested the LLM to complete the missing data, but the task was impossible as it was unable to fill in those empty fields. In the end, I opted to do the task manually.
+        </p>
+        <p>
+            In the end, due to the time-consuming nature of every iteration and the need to constantly supervise the results, which would require additional time, I decided to complete the task's remaining parts manually.
+        </p>
+        <h1>
+            Conclusions
+        </h1>
+        <p>
+            After telling my experience with AI use, I must say that I&rsquo;m not extremely surprised, maybe a little disappointed with the results. AIs and LLMs are the new thing, the latest trend, a bubble that companies are exploiting for investment catch. The things they can do are quite impressive, probably speeding up development processes if they are correctly used and addressed to certain areas. On the other side, they are, at this date, quite far away from what is mostly commented on across the internet.
+        </p>
+        <p>
+            The way I see it, their use in everyday life can be mainly limited to automation of specific tasks, like searching, summarizing content, writing assistance, and high-level consulting (for example, understanding the basics of legal conditions, but I don&rsquo;t recommend it for medicine), or automating certain things. Also, to make memes, and this is an essential aspect of the use of it in the creation of images, as it is pretty helpful if there&rsquo;s not a high expectation of the result that is being searched.
+        </p>
+        <p>
+            Professionally, I think there&rsquo;s a lot of potential as an assistant who helps to speed up processes, or even a helper that enables making quick drafts of concept art or prototyping. Still, all these tasks require someone capable of making the proper modifications or fixes in the case of coding to have a decent product at the end of the day. The impact that AI might have in the end is that the people who know what they are doing might spend less time doing menial tasks and concentrate on the more complex parts.
+        </p>
+        <p>
+            On the counter part of all the positives, I think that a general use LLM might be a stretch, and it is possible that it won&rsquo;t be practical or efficient. Considering that the LLMs require lots of data to be prepared to do tasks decently, and the data provided should be as accurate as possible, to avoid making mistakes based on data corruption. Additionally, the type of help that a person might need depends a lot on the flavor of the person, as not everyone is looking for LLMs to provide responses in the same way. Some might need immediate, accurate feedback, while others might need step-by-step explanation, without considering aspects like tone or mood.
+        </p>
+        <p>
+            Another thing that makes me think that LLMs are more in a hype state than a real-life replacement of the human skill is the fact that it is pretty common for them to make mistakes and to fall into situations in which they will propose the same solutions for an issue over and over again, even if the solution is clearly wrong. For these cases, it is necessary for the person using this technology to have background knowledge of the task being delegated, as there&rsquo;s a high chance that the results of it could be bogus.
+        </p>
+        <p>
+            I don&rsquo;t think that we should be rejecting or hyper-regulating these technologies (some kind of regulation might be needed anyway). Still, on the contrary, we should be embracing it with the appropriate respect that it deserves to navigate in such uncharted waters. Clearly, LLMs are here to stay as they are a powerful tool that anyone should be using just for fun, for work, or to study. All the activities done with them should be aware that the results that they provide might be incomplete, wrong, or not efficient and might need some additional work to obtain a proper result.
+        </p>
+        <p>
+            I think that when doing research, it can be as powerful as Wikipedia was in its creation in 2001. It is not the final place for investigation, but a place that opens many doors that can help a lot through them. Not all the information that it provides is reliable, but it can give a good general idea of the topic.
+        </p>
+        <p>
+            The reason why there&rsquo;s so much controversy about LLMs for me is mainly because of: 
+        </p>
+        <ul>
+            <li>
+                There are people that has an economic interest in the noise generated, as it provides them with a field to gather investment.
+            </li>
+            <li>
+                There are people who don&rsquo;t understand what they are, and they are afraid to change.
+            </li>
+            <li>
+                Worker Union administrators profit from the fearmongering created by the previous ones, making the fear bigger, so that they can profit more.
+            </li>
+            <li>
+                Web developers, as the LMMs (from my perspective), have been proven to be efficient for developing products pretty fast.
+            </li>
+            <li>
+                Companies that expect to cut borders in the development process by the expectation of these replacing human specialists.
+            </li>
+        </ul>
+        <p>
+            My best advice to anyone who is confused, scared, or unaware of the technology is to use it. No matter if it&rsquo;s for fun or work, use it, as learning something new is never a bad idea. But also don&rsquo;t abuse it, as it has been proven recently that it can affect your skills in the long term.
+        </p>
+    </div>
+</article>
