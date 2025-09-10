@@ -1,0 +1,269 @@
+<!-- blog/index.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gurbo's Blog</title>
+  <link rel="stylesheet" href="output.css" />
+</head>
+<body>
+  <header class="fixed top-0 left-0 w-screen py-8 px-4 bg-[#fafafa] shadow z-50">
+    <div class="relative">
+      <nav class="relative flex items-center justify-between md:justify-center w-full mx-auto">
+
+        <!-- Logo -->
+        <h1 class="text-left md:text-center text-xl md:text-3xl font-bold">Gurbo's Blog</h1>
+        
+        <!-- Botón de retorno (visible solo en mobile) -->
+        <a href="../index.html" class="button-base-config md:absolute md:right-4 md:top-1/2 md:-translate-y-1/2">
+          <span class="font-bold">My Page</span>
+        </a>
+
+      </nav>
+    </div>
+  </header>
+
+  <div class="flex max-w-screen-xl mx-auto gap-8 px-4" style="padding-top:100px;">
+
+    <main class="main-content w-3/4">
+      <div id="posts-container">
+        <!-- Aquí entrarán los posts en formato tarjeta -->
+      </div>
+    </main>
+    
+    <aside class="w-1/4 bg-[#a7a7a7] shadow" style="padding: 1rem;">
+      
+      <section class="mb-8">
+        <h3 style="font-weight: bold;">About me</h3>
+        <p>Hi I'm Leonel and this is my attempt for a blog. In it I will write 
+          down all things that are interesting for me, and my interests has a 
+          wide rage of toppics. Because I'm a programmer and game designer I 
+          hope you will find those topics related interesting, but I hope that 
+          everithing else can spark some thoughts on your side.
+        </p>
+      </section>
+
+      <section id="filters">
+        <div >
+          <label for="filter-tag">Filtrar por tag:</label>
+          <select id="filter-tag">
+            <option value="">Todos</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="filter-date">Filtrar por año:</label>
+          <select id="filter-date">
+            <option value="">Todos</option>
+          </select>
+        </div>
+
+        <button id="reset-filters" style="margin-left: 1rem;">Reset</button>
+      </section>
+
+    </aside>
+
+    <script>
+      (() => {
+        const postsContainer = document.getElementById('posts-container');
+        const tagSelect  = document.getElementById('filter-tag');
+        const dateSelect = document.getElementById('filter-date');
+        const resetBtn   = document.getElementById('reset-filters');
+
+        const MONTHS = ['ENE','FEB','MAR','ABR','MAY','JUN','JUL','AGO','SEP','OCT','NOV','DIC'];
+
+        const parseYM = (fn) => {
+          const m = /^(\d{4})-(\d{2})-(\d{2})/.exec(fn);
+          return m ? `${m[1]}-${m[2]}` : '';
+        };
+
+        const buildTagButtons = () => {
+          document.querySelectorAll('article[data-tags]').forEach(article => {
+            const tagLine = article.querySelector('.tag-line');
+            const tags = (article.getAttribute('data-tags') || '')
+              .split(',').map(s => s.trim()).filter(Boolean);
+            if (!tagLine || !tags.length) return;
+
+            tagLine.innerHTML = `<strong>Tags:</strong> ${
+              tags.map(t => `
+                <button class="tag-button" data-filter="${t}"
+                  style="
+                    display:inline-block;
+                    background-color:#e0f0ff;
+                    color:#1a73e8;
+                    padding:0.2rem 0.6rem;
+                    margin-right:0.3rem;
+                    border:none;
+                    border-radius:20px;
+                    font-size:0.875rem;
+                    font-weight:500;
+                    cursor:pointer;
+                  "
+                >
+                  ${t}
+                </button>`
+              ).join(' ')
+            }`;
+          });
+        };
+
+        const populateSelects = (months) => {
+          // Tags
+          const tagSet = new Set();
+          document.querySelectorAll('article[data-tags]').forEach(a => {
+            (a.getAttribute('data-tags') || '')
+              .split(',').map(s => s.trim()).filter(Boolean)
+              .forEach(t => tagSet.add(t));
+          });
+          Array.from(tagSet).sort().forEach(t => {
+            const opt = document.createElement('option');
+            opt.value = t;
+            opt.textContent = t;
+            tagSelect.appendChild(opt);
+          });
+
+          // Meses (YYYY-MM)
+          months.forEach(ym => {
+            const [yyyy, mm] = ym.split('-');
+            const opt = document.createElement('option');
+            opt.value = ym;
+            opt.textContent = `${MONTHS[Number(mm)-1]} ${yyyy}`;
+            dateSelect.appendChild(opt);
+          });
+        };
+
+        const applyFilters = () => {
+          const tag = (tagSelect?.value || '').trim();
+          const ym  = (dateSelect?.value || '').trim();
+
+          document.querySelectorAll('.post-wrapper').forEach(w => {
+            const article = w.querySelector('article[data-tags]');
+            const tagsArr = (article?.getAttribute('data-tags') || '')
+              .split(',').map(s => s.trim()).filter(Boolean);
+
+            const matchTag = !tag || tagsArr.includes(tag);
+            const matchYM  = !ym  || w.dataset.ym === ym;
+
+            w.style.display = (matchTag && matchYM) ? '' : 'none';
+          });
+        };
+
+        // Offset de scroll según altura de header fijo
+        const setScrollOffset = () => {
+          const header = document.querySelector('header');
+          const headerH = header ? header.getBoundingClientRect().height : 0;
+          const OFFSET = headerH + 8; // margen cómodo
+
+          // El contenedor de scroll es el documento
+          document.documentElement.style.scrollPaddingTop = `${OFFSET}px`;
+
+          // Si alguien hace scrollIntoView sobre un post, que se respete ese margen
+          document.querySelectorAll('.post-wrapper').forEach(el => {
+            el.style.scrollMarginTop = `${OFFSET}px`;
+          });
+        };
+
+        // Desplazar al post indicado en el hash
+        const scrollToHash = () => {
+          const raw = (window.location.hash || '').slice(1); // sin "#"
+          if (!raw) return;
+
+          // Asegurar que no haya filtros ocultando el destino
+          if (tagSelect)  tagSelect.value = '';
+          if (dateSelect) dateSelect.value = '';
+          applyFilters();
+
+          const id = decodeURIComponent(raw);
+          const el = document.getElementById(id);
+          if (!el) return;
+
+          // Compensar header fijo
+          const header = document.querySelector('header');
+          const headerH = header ? header.getBoundingClientRect().height : 0;
+
+          // Calcular y desplazar
+          const y = el.getBoundingClientRect().top + window.pageYOffset - headerH - 16; // 16px margen
+          window.scrollTo({ top: y, behavior: 'smooth' });
+
+          // Resaltar brevemente el post
+          el.classList.add('ring-2','ring-blue-400','rounded');
+          setTimeout(() => el.classList.remove('ring-2','ring-blue-400'), 2000);
+        };
+
+        // === Carga, orden y render ===
+        fetch('posts/index.json')
+          .then(res => res.json())
+          .then(files => {
+            // Orden nuevo -> viejo por nombre: YYYY-MM-DD...
+            files.sort((a, b) => b.localeCompare(a));
+
+            const monthsSet = new Set();
+            const resultMap = new Map(); // filename -> { html, ym }
+
+            files.forEach(fn => {
+              const ym = parseYM(fn);
+              if (ym) monthsSet.add(ym);
+            });
+
+            const fetches = files.map(fn =>
+              fetch(`posts/${fn}`)
+                .then(r => r.text())
+                .then(html => resultMap.set(fn, { html, ym: parseYM(fn) }))
+            );
+
+            return Promise.all(fetches).then(() => ({
+              files,
+              months: Array.from(monthsSet).sort((a, b) => b.localeCompare(a)),
+              resultMap
+            }));
+          })
+          .then(({ files, months, resultMap }) => {
+            // Insertar en el DOM respetando el orden nuevo -> viejo
+            files.forEach(fn => {
+              const { html, ym } = resultMap.get(fn) || { html: '', ym: '' };
+              const wrap = document.createElement('div');
+              wrap.id = `post-${fn.replace(/\.html$/,'')}`;
+              wrap.className = 'post-wrapper';
+              wrap.dataset.ym = ym;
+              wrap.dataset.filename = fn;
+              wrap.innerHTML = html;
+              wrap.insertAdjacentHTML('beforeend', '<hr class="my-6">'); // separador junto al post
+              postsContainer.appendChild(wrap);
+            });
+
+            // Construir UI (tags + selects) y listeners
+            buildTagButtons();
+            populateSelects(months);
+            setScrollOffset();
+            scrollToHash();
+
+            window.addEventListener('resize', setScrollOffset);
+            window.addEventListener('hashchange', scrollToHash);
+            tagSelect.addEventListener('change', applyFilters);
+            dateSelect.addEventListener('change', applyFilters);
+            resetBtn?.addEventListener('click', () => {
+              tagSelect.value = '';
+              dateSelect.value = '';
+              applyFilters();
+            });
+
+            // Click en botón de tag (sin perder el mes seleccionado)
+            document.addEventListener('click', (e) => {
+              const btn = e.target.closest('.tag-button');
+              if (!btn) return;
+              tagSelect.value = btn.getAttribute('data-filter');
+              applyFilters();
+            });
+          })
+          .catch(err => console.error('Error inicializando posts/filtros:', err));
+      })();
+    </script>
+  </div>
+
+  <footer class="text-center py-4 bg-gray-300 text-sm">
+    <p>&copy; 2025 Gurbo – All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

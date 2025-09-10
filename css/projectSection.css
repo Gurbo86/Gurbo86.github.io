@@ -49,14 +49,6 @@
     @apply h-8 w-auto transition-transform duration-300 ease-in-out group-hover:scale-105;
   }
 
-  .project-title {
-    @apply text-xl font-semibold;
-  }
-
-  .project-description {
-    @apply text-sm;
-  }
-  
   html {
     scroll-behavior: smooth;
   }

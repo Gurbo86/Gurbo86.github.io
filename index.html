@@ -681,75 +681,46 @@
       <div class="mx-auto px-4 sm:px-6 lg:px-8">
         
         <!-- Grilla de Posts Recientes -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
-          <!-- Blog Card -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6" id="recent-posts-grid">
+        </div>
+        
+        <!-- Template Blog Card -->
+        <template id="post-card-template">
           <div class="relative bg-gray-800 rounded-xl shadow-md overflow-hidden h-[14rem] sm:h-[24rem] md:h-80 flex generic-hover group md:items-end">
             <!-- Imagen de fondo -->
-            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1751225750479-43ad27b94fa0?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"></div>
+            <div class="absolute inset-0 bg-cover bg-center post-bg"></div>
             <!-- Overlay oscuro  -->
             <div class="absolute inset-0 bg-black opacity-30"></div>
-
             <!-- Contenido encima -->
             <div class="relative z-10 h-full p-4 flex flex-col">
-
               <!-- Header -->
               <div class="flex items-start justify-between gap-2">
-                  <h3 class="text-2xl font-extrabold tracking-tight text-white drop-shadow-lg">
-                    Post Title
-                  </h3>
-                  
-                  
-                  <span class="shrink-0 bg-white/15 text-white text-xs font-medium px-2 py-1 rounded-full backdrop-blur-sm">
-                    Category
-                  </span>
+                <h3 class="post-title text-2xl font-extrabold tracking-tight text-white drop-shadow-lg"></h3>
+                <!-- Contenedor de tags/categorías (1–2 pills) -->
+                <div class="post-tags flex gap-1 shrink-0"></div>
               </div>
-
-              <!-- Cuerpo (ocupa el espacio medio) -->
+              <!-- Cuerpo -->
               <div class="mt-2 flex-1 relative overflow-hidden">
-                  <!-- Si tenés el plugin line-clamp de Tailwind -->
-                  <p class="text-sm text-white/90 leading-relaxed line-clamp-4 md:line-clamp-[8]">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ultrices erat a 
-                    mollis aliquam. Phasellus sem sem, aliquam et fermentum ut, venenatis et ipsum. 
-                    Maecenas congue lacus quis nisl vehicula bibendum. Vivamus id libero eu turpis 
-                    imperdiet mattis. Ut tempus dictum auctor. Cras eu efficitur nisl. In congue nisl 
-                    elementum justo iaculis, eget sollicitudin ex porttitor. Proin dapibus nibh 
-                    vulputate nunc semper aliquam. Morbi pretium dictum mauris nec pulvinar. Class 
-                    aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos 
-                    himenaeos. Morbi id bibendum augue. Aenean vitae neque aliquet, posuere nulla 
-                    bibendum, ultrices mi. Mauris varius convallis nibh, vel scelerisque felis 
-                    consectetur vitae. Vestibulum bibendum lacinia erat, vel ultrices tortor placerat 
-                    at. Cras dictum gravida lorem. In cursus erat nec quam egestas mattis. In eu arcu 
-                    orci. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut nisl vitae 
-                    eros molestie venenatis. Nunc feugiat imperdiet lectus, eget aliquam mi lobortis 
-                    ac. Etiam at sodales nunc. Praesent eget enim congue, sollicitudin tellus sit 
-                    amet, congue turpis. Fusce sit amet gravida magna, quis eleifend elit. Vivamus 
-                    ultrices dapibus eleifend. 
-                  </p>
+                <p class="post-excerpt text-sm text-white/90 leading-relaxed whitespace-pre-line line-clamp-4 md:line-clamp-[8]"></p>
               </div>
-
-              <!-- Footer --> <!--transition-colors-->
+              <!-- Footer -->
               <div class="mt-auto flex items-center justify-center">
-                  <a href="#"
-                    class="inline-flex items-center gap-2 px-6 py-2 rounded bg-blue-600 text-white font-semibold shadow
-                            transition-colors duration-200 hover:bg-blue-700
-                            active:scale-95 active:bg-blue-700
-                            focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-800
-                            cursor-pointer">
-                    <span>Read more</span>
-                    <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2"
-                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                    </svg>
-                  </a>
-
+                <a href="#" class="inline-flex items-center gap-2 px-6 py-2 rounded bg-blue-600 text-white font-semibold shadow
+                                  transition-colors duration-200 hover:bg-blue-700 
+                                  active:scale-95 active:bg-blue-700
+                                  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-800
+                                  post-link">
+                  <span>Read more</span>
+                  <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2"
+                      viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                          d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                  </svg>
+                </a>
               </div>
-            
             </div>
-          
           </div>
-
-        </div>
+        </template>
         
       </div>
     
@@ -758,7 +729,7 @@
           If you want to read more articles like this, visit my blog!
         </p>
 
-        <a href="#"
+        <a href="./blog/blog.html"
           class="inline-flex items-center gap-2 px-6 py-2 rounded bg-blue-600 text-white font-semibold shadow
                   transition-colors duration-200 hover:bg-blue-700
                   active:scale-95 active:bg-blue-700
@@ -774,6 +745,93 @@
       </div>
 
     </section>
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const GRID = document.getElementById('recent-posts-grid');
+        const TPL  = document.getElementById('post-card-template');
+
+        const resolveImg = (src) => {
+          if (!src) return null;
+          if (src.startsWith('http') || src.startsWith('/')) return src;
+          return `blog/posts/${src}`; // relativo al index.html raíz
+        };
+
+        const fallbackImg = "https://images.unsplash.com/photo-1751225750479-43ad27b94fa0?q=80&w=1200&auto=format&fit=crop";
+
+        // 1) Cargar listado, ordenar nuevo->viejo, tomar 4
+        fetch('blog/posts/index.json')
+          .then(r => r.json())
+          .then(files => {
+            files.sort((a, b) => b.localeCompare(a)); // YYYY-MM-DD... desc
+            return files.slice(0, 4);
+          })
+          // 2) Traer cada post y parsear datos
+          .then(top4 => Promise.all(
+            top4.map(fn =>
+              fetch(`blog/posts/${fn}`)
+                .then(r => r.text())
+                .then(html => ({ fn, html }))
+            )
+          ))
+          // 3) Render en tarjetas
+          .then(items => {
+            GRID.innerHTML = ''; // limpiar placeholder si lo hubiera
+            items.forEach(({ fn, html }) => {
+              const doc = new DOMParser().parseFromString(html, 'text/html');
+              const article = doc.querySelector('article');
+              
+              // Título buscado con #post-title
+              const title = ((article?.querySelector('#post-title'))?.textContent || 'Untitled')
+                .replace(/\s+/g, ' ')
+                .trim();
+
+              // Tags (data-tags = "a,b,c")
+              const tags = (article?.getAttribute('data-tags') || '')
+                .split(',').map(t => t.trim()).filter(Boolean);
+
+              // Busco el contenido del post con id #post-content
+              const contentRoot = article?.querySelector('#post-content');
+
+              // Busco la primera imagen del contenido para usarla de background
+              const bg = resolveImg(contentRoot?.querySelector('img')?.getAttribute('src')) || fallbackImg;
+              
+              // EXTRACTO: primeros 2-3 párrafos del bloque de contenido
+              let excerpt = Array
+                // busco el contenido debajo del #post-content, levanto todos los <p>
+                .from(contentRoot?.querySelectorAll('p') || [])
+                // limpio espacios y salto vacíos
+                .map(p => p.textContent.replace(/\s+/g, ' ').trim())
+                .filter(Boolean)
+                .slice(0, 2)
+                // uno en un solo string
+                .join('<br><br>');
+
+              // Enlace al post (usa hash hacia el blog)
+              const link = `blog/blog.html#post-${encodeURIComponent(fn.replace(/\.html$/,''))}`;
+
+              // Clonar template y rellenar
+              const node = TPL.content.firstElementChild.cloneNode(true);
+              node.querySelector('.post-bg').style.backgroundImage = `url('${bg}')`;
+              node.querySelector('.post-title').textContent = title;
+              node.querySelector('.post-excerpt').innerHTML = excerpt;
+              node.querySelector('.post-link').setAttribute('href', link);
+
+              // Pintar hasta 2 tags como pills
+              const tagsBox = node.querySelector('.post-tags');
+              tags.slice(0, 2).forEach(tag => {
+                const pill = document.createElement('span');
+                pill.className = 'bg-white/15 text-white text-xs font-medium px-2 py-1 rounded-full backdrop-blur-sm';
+                pill.textContent = tag;
+                tagsBox.appendChild(pill);
+              });
+
+              GRID.appendChild(node);
+            });
+          })
+          .catch(err => console.error('Error cargando posts recientes:', err));
+      });
+      </script>
     
     <!----------------------------------- Contact ------------------------------------>
     <section id="contact" class="min-h-screen py-20 px-6 bg-black">

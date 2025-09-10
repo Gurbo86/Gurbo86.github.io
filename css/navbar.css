@@ -1,9 +1,6 @@
 @layer components {
+  
   /* ------ Navigation Bar CSS ------ */
-  .site-nav {
-    @apply flex items-center justify-between px-4 py-4 max-w-full mx-auto whitespace-nowrap;
-  }
-
   .site-title {
     @apply text-lg font-bold text-white;
     font-family: 'Inter', sans-serif; /* <-- fuerza Inter */
@@ -15,10 +12,6 @@
 
   .button-icon {
     @apply w-6 h-6;
-  }
-
-  .back-label {
-    @apply hidden md:inline;
   }
   
   /* ------ Navigation Bar CSS ------ */
